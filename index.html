@@ -1,390 +1,446 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="google-site-verification" content="google471d583c7a9d3999" />
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VENGAS Medellín | Ingeniería de Soporte Técnico Superior</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Título Único y Potente -->
+    <title>VENGAS MEDELLIN | Técnico en Medellín, Envigado y Rionegro | Reparación de Lavadoras y Calentadores</title>
+    
+    <!-- Meta Descripción Optimizada -->
+    <meta name="description" content="Servicio técnico experto en Medellín y Oriente Antioqueño. Reparación de calentadores, lavadoras y estufas con garantía de 4 meses. ¡Agenda por WhatsApp!">
+    
+    <!-- Geo-Tags (Indica a Google tu zona de operación) -->
+    <meta name="geo.region" content="CO-ANT" />
+    <meta name="geo.placename" content="Medellín" />
+    <meta name="geo.position" content="6.244203;-75.581211" />
+    <meta name="ICBM" content="6.244203, -75.581211" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <!-- Open Graph (Lo que se ve en WhatsApp) -->
+    <meta property="og:title" content="VENGAS SERVICIOS TÉCNICOS | Ingeniería de Hogar">
+    <meta property="og:description" content="Reparación y mantenimiento experto en Antioquia. Garantía certificada.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://vengas.com.co">
+    <meta property="og:type" content="website">
+
+    <!-- Favicons (Solo una vez) -->
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Fuentes y Estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&family=JetBrains+Mono:wght@500;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <style>
+    
+      <style>
         :root {
-            --orange: #ff8c00;
-            --orange-glow: rgba(255, 140, 0, 0.4);
-            --blue-tech: #00f2ff;
-            --blue-glow: rgba(0, 242, 255, 0.3);
-            --dark-bg: #010409;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
+            --primary: #00f2ff;
+            --primary-glow: rgba(0, 242, 255, 0.4);
+            --accent: #ff9f43;
+            --bg-dark: #020617;
+            --glass: rgba(15, 23, 42, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-muted: #94a3b8;
         }
 
-        /* BARRA DE PROGRESO DE LECTURA */
-        .progress-bar {
-            position: fixed; top: 0; left: 0; height: 4px;
-            background: linear-gradient(90deg, var(--blue-tech), var(--orange), var(--blue-tech));
-            background-size: 200% auto;
-            animation: moveGradient 3s linear infinite;
-            z-index: 2001; width: 0%; transition: 0.2s;
-        }
-        @keyframes moveGradient { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+        /* --- Base --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body { background: var(--bg-dark); color: #f1f5f9; font-family: 'Outfit', sans-serif; overflow-x: hidden; line-height: 1.6; }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
+        #cursor-aura { position: fixed; width: 450px; height: 450px; background: radial-gradient(circle, rgba(0, 242, 255, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; transform: translate(-50%, -50%); transition: 0.1s linear; }
 
-        #particles-js {
-            position: fixed; width: 100%; height: 100%;
-            z-index: -1; top: 0; left: 0;
-            background: radial-gradient(circle at 50% 50%, #0a0f18 0%, #010409 100%);
-        }
+        /* Nav */
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(25px); padding: 12px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--glass-border); }
+        .logo-box { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; background: #000; overflow: hidden; box-shadow: 0 0 15px var(--primary-glow); position: relative; }
+        .logo-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Hero */
+        .container { max-width: 1240px; margin: 0 auto; padding: 120px 6% 60px; position: relative; z-index: 1; }
+        .hero { min-height: 50vh; display: flex; flex-direction: column; justify-content: center; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 0.9; margin-bottom: 25px; text-transform: uppercase; }
+        .grad { background: linear-gradient(90deg, var(--primary), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        .badge-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; }
+        .badge { background: rgba(255,255,255,0.05); padding: 8px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; border: 1px solid var(--glass-border); color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--dark-bg);
-            color: #fff;
-            overflow-x: hidden;
+        /* Marcas Slider */
+        .brands-slider { background: rgba(0,0,0,0.3); padding: 30px 0; overflow: hidden; margin: 40px 0; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
+        .brands-track { display: flex; width: calc(200px * 14); animation: scrollBrands 25s linear infinite; }
+        .brand-item { width: 200px; text-align: center; color: #fff; font-weight: 900; font-size: 1.2rem; opacity: 0.4; letter-spacing: 2px; }
+        @keyframes scrollBrands { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-200px * 7)); } }
+
+        /* Titles */
+        .section-title { text-align: center; margin: 80px 0 40px; }
+        .section-title h2 { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; }
+        .accent-bar { width: 50px; height: 5px; background: var(--accent); margin: 15px auto; border-radius: 10px; }
+
+        /* Cards */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .glass-card { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 25px; padding: 30px; transition: 0.4s; }
+        .glass-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 242, 255, 0.1); }
+        .card-icon { font-size: 1.6rem; color: var(--accent); margin-bottom: 15px; display: block; }
+
+        .price-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .p-label { font-size: 0.85rem; color: #cbd5e1; }
+        .p-value { font-family: 'JetBrains Mono'; font-weight: 800; color: var(--primary); font-size: 0.9rem; background: rgba(0,242,255,0.05); padding: 2px 8px; border-radius: 5px; }
+
+        /* FAQ Section */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 15px; margin-bottom: 10px; overflow: hidden; }
+        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; transition: 0.3s; }
+        .faq-question:hover { background: rgba(0, 242, 255, 0.05); }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s ease-out; color: var(--text-muted); font-size: 0.9rem; }
+        .faq-item.active .faq-answer { padding: 0 20px 20px; max-height: 250px; }
+        .faq-item.active .faq-question { color: var(--primary); }
+        .faq-icon { transition: 0.3s; font-size: 0.8rem; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+        /* Proceso */
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; }
+        .step-card { text-align: center; padding: 30px; border-radius: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); position: relative; overflow: hidden; }
+        .step-num { width: 40px; height: 40px; background: var(--primary); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: 900; box-shadow: 0 0 15px var(--primary-glow); }
+
+        /* Footer */
+        footer { background: #01040a; padding: 60px 8% 120px; border-top: 1px solid var(--glass-border); margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        
+        .social-banner { display: flex; gap: 15px; margin-top: 20px; }
+        .social-icon { width: 45px; height: 45px; border-radius: 12px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; border: 1px solid var(--glass-border); transition: 0.3s; font-size: 1.2rem; }
+        .social-icon:hover { background: var(--primary); color: #000; transform: translateY(-3px); }
+
+        /* WA Button SUPER-PERSUASIVO */
+        .btn-wa { 
+            position: fixed; 
+            bottom: 25px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 92%; 
+            max-width: 420px; 
+            z-index: 2000; 
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); 
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 25px; 
+            border-radius: 24px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            text-decoration: none; 
+            color: white; 
+            font-weight: 800; 
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
         }
 
-        /* HEADER TIPO INTERFAZ - BANNER SUPERIOR */
-        .system-header {
-            position: fixed; top: 0; width: 100%; z-index: 2000;
-            background: rgba(1, 4, 9, 0.95);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid var(--blue-tech);
-            padding: 15px 40px;
-            display: flex; justify-content: space-between; align-items: center;
-            font-size: 11px; letter-spacing: 2px;
-            box-shadow: 0 5px 30px rgba(0, 242, 255, 0.15);
-        }
-
-        .status-block { display: flex; align-items: center; gap: 10px; }
-        .status-dot {
-            width: 8px; height: 8px; background: #00ff00;
-            border-radius: 50%; display: inline-block;
-            box-shadow: 0 0 15px #00ff00;
-            animation: pulseStatus 1.5s infinite;
-        }
-        @keyframes pulseStatus { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.3); opacity: 0.5; } }
-
-        /* HERO ENGINE - AJUSTE DE DISTANCIA DEL LOGO */
-        .hero {
-            min-height: 100vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; position: relative;
-            padding: 140px 20px 80px 20px; /* DISTANCIA AUMENTADA PARA EL LOGO */
-            text-align: center; overflow: hidden;
-        }
-
-        .scanner-portal {
-            position: relative; width: 260px; height: 260px;
-            display: flex; justify-content: center; align-items: center;
-            margin-bottom: 40px; /* MÁS ESPACIO HACIA EL TEXTO */
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .logo-main {
-            width: 200px; height: 200px; z-index: 10;
-            object-fit: contain; border-radius: 50%;
-            background: rgba(1, 4, 9, 0.8); border: 2px solid var(--orange);
-            padding: 20px; filter: drop-shadow(0 0 35px var(--orange-glow));
-        }
-
-        .laser-line {
-            position: absolute; width: 140%; height: 3px;
-            background: linear-gradient(90deg, transparent, var(--blue-tech), var(--orange), transparent);
-            box-shadow: 0 0 25px var(--blue-tech);
-            z-index: 11; animation: laserMove 5s ease-in-out infinite;
-        }
-        @keyframes laserMove { 0%, 100% { top: 10%; opacity: 0; } 50% { top: 90%; opacity: 1; } }
-
-        .hero h1 {
-            font-size: clamp(2.8rem, 10vw, 5.5rem); font-weight: 900;
-            line-height: 0.85; text-transform: uppercase; letter-spacing: -3px;
-            background: linear-gradient(to bottom, #fff 50%, var(--blue-tech));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero h1 span { color: var(--orange); -webkit-text-fill-color: var(--orange); }
-
-        .data-strip {
-            display: flex; gap: 30px; margin-top: 45px;
-            background: rgba(1, 4, 9, 0.8); backdrop-filter: blur(15px);
-            padding: 22px 50px; border-radius: 100px;
-            border: 1px solid var(--blue-tech);
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
-            flex-wrap: wrap; justify-content: center;
-        }
-        .data-point { display: flex; align-items: center; gap: 12px; border-right: 1px solid rgba(0, 242, 255, 0.2); padding-right: 25px; }
-        .data-point:last-child { border: none; padding-right: 0; }
-        .data-point b { color: var(--blue-tech); display: block; font-size: 1.2rem; font-weight: 900; }
-        .data-point small { font-size: 9px; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
-        .data-point i { color: var(--orange); font-size: 1.2rem; }
-
-        .btn-hero-cta {
-            display: inline-flex; align-items: center; gap: 15px;
-            margin-top: 50px; padding: 22px 55px; background: #fff; color: #000;
-            border-radius: 100px; text-decoration: none; font-weight: 800;
-            font-size: 1.1rem; box-shadow: 0 15px 50px rgba(0, 242, 255, 0.3);
-            transition: 0.5s; border: 2px solid transparent;
-        }
-        .btn-hero-cta:hover { background: var(--orange); color: #fff; transform: translateY(-10px) scale(1.05); }
-
-        /* SECCIONES Y BANNERS ORGANIZADOS */
-        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
-        .elite-card {
-            background: rgba(1, 4, 9, 0.7); border: 1px solid var(--border);
-            backdrop-filter: blur(25px); border-radius: 40px; padding: 60px; margin-bottom: 60px;
-            position: relative; overflow: hidden; transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .elite-card:hover { border-color: var(--blue-tech); transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
-
-        .section-title { font-weight: 900; letter-spacing: -1px; font-size: 2rem; text-transform: uppercase; }
-
-        .service-box { 
-            padding: 45px 35px; border-radius: 30px; background: rgba(255,255,255,0.02); 
-            border: 1px solid var(--border); transition: 0.4s; position: relative;
+        /* Rayo de luz persuasivo */
+        .btn-wa::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
             height: 100%;
-        }
-        .service-box:hover { background: rgba(255,140,0,0.05); border-color: var(--orange); transform: scale(1.03); }
-        .service-box i { font-size: 40px; color: var(--orange); margin-bottom: 20px; display: block; }
-        .service-box h3 { margin-bottom: 15px; color: var(--blue-tech); }
-
-        .info-list { list-style: none; margin-top: 20px; }
-        .info-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; font-size: 1.1rem; }
-        .info-list i { color: var(--orange); font-size: 1.3rem; }
-
-        .faq-item { border-bottom: 1px solid var(--border); padding: 35px 0; cursor: pointer; transition: 0.3s; }
-        .faq-header { display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.2rem; }
-        .faq-content { max-height: 0; overflow: hidden; transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); color: #ccc; font-size: 15px; line-height: 1.8; }
-        .faq-item.active .faq-content { max-height: 350px; margin-top: 25px; }
-        .faq-item.active .faq-header { color: var(--orange); }
-
-        .pro-footer {
-            background: linear-gradient(to top, #010409, #0a0f18); border-top: 2px solid var(--blue-tech);
-            padding: 100px 40px 40px; position: relative;
-        }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px; }
-        .footer-col h4 { color: var(--blue-tech); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 30px; font-size: 15px; }
-        .footer-col li { list-style: none; font-size: 14px; opacity: 0.7; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .footer-col i { color: var(--orange); width: 20px; }
-
-        .social-links { display: flex; gap: 20px; margin-top: 30px; }
-        .social-links a { 
-            width: 50px; height: 50px; border: 1px solid var(--blue-tech);
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%; color: #fff; text-decoration: none; transition: 0.4s;
-        }
-        .social-links a:hover { background: var(--blue-tech); color: #000; box-shadow: 0 0 25px var(--blue-tech); transform: rotate(360deg); }
-
-        .wa-command { position: fixed; bottom: 40px; right: 40px; z-index: 2000; }
-        .wa-trigger {
-            width: 85px; height: 85px; background: #25D366; border-radius: 25px;
-            display: flex; justify-content: center; align-items: center; font-size: 45px; color: #fff;
-            box-shadow: 0 20px 50px rgba(37,211,102,0.4); transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            text-decoration: none;
-        }
-        .wa-status-badge {
-            position: absolute; top: -10px; left: -10px; background: #fff; color: #000;
-            padding: 6px 15px; border-radius: 50px; font-size: 10px; font-weight: 900;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3); white-space: nowrap; border: 2px solid #25D366;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shine 3s infinite;
         }
 
-        @media (max-width: 768px) {
-            .hero { padding-top: 140px; }
-            .hero h1 { font-size: 3.2rem; }
-            .data-strip { border-radius: 30px; padding: 30px 20px; margin-top: 30px; }
-            .data-point { border: none; padding-right: 0; width: 100%; justify-content: center; }
-            .wa-trigger { width: 70px; height: 70px; font-size: 35px; }
-            .elite-card { padding: 40px 20px; }
+        @keyframes shine {
+            0% { left: -100%; }
+            30% { left: 100%; }
+            100% { left: 100%; }
         }
+
+        .btn-wa:hover {
+            transform: translateX(-50%) translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.6);
+            filter: brightness(1.1);
+        }
+
+        .wa-content {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .wa-badge-top {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            opacity: 0.9;
+            margin-bottom: 2px;
+            font-weight: 400;
+        }
+
+        .wa-main-text {
+            font-size: 1.15rem;
+            font-weight: 900;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .wa-availability {
+            font-size: 0.6rem;
+            color: #afffca;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 2px;
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            background: #afffca;
+            border-radius: 50%;
+            animation: dot-pulse 1.5s infinite;
+        }
+
+        @keyframes dot-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .wa-icon-glow {
+            font-size: 2.2rem;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+            animation: shake 5s infinite;
+        }
+
+        @keyframes shake {
+            0%, 90%, 100% { transform: rotate(0); }
+            92% { transform: rotate(10deg); }
+            94% { transform: rotate(-10deg); }
+            96% { transform: rotate(10deg); }
+            98% { transform: rotate(-10deg); }
+        }
+
+        @media (max-width: 768px) { .hero { text-align: center; } .badge-grid { justify-content: center; } .social-banner { justify-content: center; } }
     </style>
 </head>
 <body>
 
-    <div class="progress-bar" id="topBar"></div>
     <div id="particles-js"></div>
+    <div id="cursor-aura"></div>
 
-    <div class="system-header">
-        <div class="status-block">
-            <span class="status-dot"></span> 
-            <span>VENGAS_PROTO_v7.0 :: <span style="color:var(--orange)">ACTIVE</span></span>
-        </div>
-        <div id="clock">00:00:00</div>
-        <div style="font-weight: 900; letter-spacing: 3px; color: #fff;">ANTIOQUIA_CORE</div>
-    </div>
-
-    <section class="hero">
-        <div class="scanner-portal" data-aos="zoom-in" id="mainPortal">
-            <div class="laser-line"></div>
-            <img src="logo.png" class="logo-main" alt="VENGAS TÉCNICO">
-        </div>
-        
-        <div data-aos="fade-up" data-aos-delay="200">
-            <h1>INGENIERÍA<span> TÉCNICA</span><br>DE SOPORTE</h1>
-            
-            <div class="data-strip">
-                <div class="data-point"><i class="fas fa-certificate"></i><div><b>+10 AÑOS</b><small>Core Expertise</small></div></div>
-                <div class="data-point"><i class="fas fa-bolt"></i><div><b>ON-DEMAND</b><small>Atención Hoy</small></div></div>
-                <div class="data-point"><i class="fas fa-shield-alt"></i><div><b>120 DÍAS</b><small>Garantía Real</small></div></div>
-                <div class="data-point"><i class="fas fa-check-double"></i><div><b>ORIGINAL</b><small>Repuestos Élite</small></div></div>
-            </div>
-
-            <center>
-                <a href="https://wa.me/573238404024" class="btn-hero-cta">
-                    <i class="fab fa-whatsapp"></i> AGENDAR REVISIÓN TÉCNICA
-                </a>
-            </center>
-        </div>
-    </section>
+    <nav>
+        <div class="logo-box"><img src="logo.png" alt="VENGAS"></div>
+        <div style="font-family:'JetBrains Mono'; font-size:0.65rem; color:var(--primary); font-weight:800;">[ VENGAS_PRO_2026 ]</div>
+    </nav>
 
     <div class="container">
+        <header class="hero" data-aos="fade-up">
+            <h1>VENGAS MEDELLÍN <br><span class="grad">LÍDER EN REPARACIONES</span></h1>
+            <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 750px; margin-top: 10px;">
+                Especialistas en <strong>reparación, mantenimiento e instalación</strong> de electrodomésticos y gasodomésticos con ingeniería de hogar de alta calidad.
+            </p>
+            <div class="badge-grid">
+                <span class="badge"><i class="fas fa-shield-alt"></i> GARANTÍA 4 MESES</span>
+                <span class="badge"><i class="fas fa-bolt"></i> ATENCIÓN ÁGIL</span>
+                <span class="badge"><i class="fas fa-home"></i> A DOMICILIO</span>
+            </div>
+        </header>
 
-        <div class="elite-card" data-aos="fade-up">
-            <h2 class="section-title" style="border-left: 6px solid var(--orange); padding-left: 25px; margin-bottom: 50px;"><span style="color:var(--blue-tech)">01.</span> PROTOCOLOS DE INTERVENCIÓN</h2>
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div class="service-box" data-aos="flip-left">
-                    <i class="fas fa-microchip"></i>
-                    <h3>Sistemas de Lavado</h3>
-                    <p>Corrección de errores lógicos, calibración de sensores y reconstrucción de transmisiones de alto desempeño.</p>
-                </div>
-                <div class="service-box" data-aos="flip-left" data-aos-delay="100">
-                    <i class="fas fa-snowflake"></i>
-                    <h3>Gestión Térmica</h3>
-                    <p>Recarga de refrigerante ecológico (R600a), reparación de sellos y optimización de compresores Inverter.</p>
-                </div>
-                <div class="service-box" data-aos="flip-left" data-aos-delay="200">
-                    <i class="fas fa-burn"></i>
-                    <h3>Unidades de Gas</h3>
-                    <p>Mantenimiento preventivo y correctivo de calentadores de paso y estufas bajo estricta norma NTC.</p>
-                </div>
+        <div class="brands-slider">
+            <div class="brands-track">
+                <div class="brand-item">HACEB</div><div class="brand-item">BOSCH</div><div class="brand-item">CHALLENGER</div>
+                <div class="brand-item">LG</div><div class="brand-item">SAMSUNG</div><div class="brand-item">WHIRLPOOL</div><div class="brand-item">MABE</div>
+                <div class="brand-item">HACEB</div><div class="brand-item">BOSCH</div><div class="brand-item">CHALLENGER</div>
+                <div class="brand-item">LG</div><div class="brand-item">SAMSUNG</div><div class="brand-item">WHIRLPOOL</div><div class="brand-item">MABE</div>
             </div>
         </div>
 
-        <div class="elite-card" style="border-right: 5px solid var(--orange);" data-aos="fade-right">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
-                <div>
-                    <h2 class="section-title" style="margin-bottom: 30px;"><span style="color:var(--orange)">02.</span> ESTÁNDARES DE ÉLITE</h2>
-                    <ul class="info-list">
-                        <li><i class="fas fa-check-circle"></i> Garantía Escrita por 120 días.</li>
-                        <li><i class="fas fa-check-circle"></i> Técnicos Uniformados y Vinculados.</li>
-                        <li><i class="fas fa-check-circle"></i> Repuestos 100% Originales.</li>
-                        <li><i class="fas fa-check-circle"></i> Soporte Post-Servicio Inmediato.</li>
-                    </ul>
-                </div>
-                <div style="text-align: center; background: rgba(0,0,0,0.4); padding: 50px; border-radius: 40px; border: 1px solid var(--blue-tech); position: relative;">
-                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--blue-tech); color: #000; padding: 5px 20px; border-radius: 20px; font-weight: 900; font-size: 10px;">TOP RATED</div>
-                    <div style="font-size: 5rem; font-weight: 900; color: var(--blue-tech); line-height: 1;">4.9/5</div>
-                    <div style="color: gold; font-size: 1.4rem; margin: 15px 0;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p style="font-size: 13px; opacity: 0.7;">Satisfacción verificada de +2,400 reparaciones.</p>
-                </div>
+        <section class="section-title" data-aos="fade-up">
+            <h2>Portafolio de Servicios</h2>
+            <div class="accent-bar"></div>
+        </section>
+
+        <div class="services-grid">
+            <div class="glass-card" data-aos="fade-up">
+                <i class="fas fa-fire card-icon"></i>
+                <h3>🔥 CUBIERTAS</h3>
+                <div class="price-row"><span class="p-label">4 Puestos (Vidrio/Inox)</span> <span class="p-value">$130.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">5 Puestos (Vidrio/Inox)</span> <span class="p-value">$180.000</span></div>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-tint card-icon"></i>
+                <h3>💧 CALENTADORES</h3>
+                <div class="price-row"><span class="p-label">Paso 5.5 LT</span> <span class="p-value">$130.000</span></div>
+                <div class="price-row"><span class="p-label">8 a 14 LT</span> <span class="p-value">$160.000</span></div>
+                <div class="price-row"><span class="p-label">Therm 8000</span> <span class="p-value">$300.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">Acumulación</span> <span class="p-value">$140.000</span></div>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-tools card-icon"></i>
+                <h3>🔧 INSTALACIONES GAS</h3>
+                <div class="price-row"><span class="p-label">Revisión Prevención</span> <span class="p-value">$80.000</span></div>
+                <div class="price-row"><span class="p-label">Instalación Pto Cero</span> <span class="p-value">$200.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">Desinstalar e Instalar</span> <span class="p-value">$170.000</span></div>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up">
+                <i class="fas fa-tshirt card-icon"></i>
+                <h3>👕 LAVADO Y SECADO</h3>
+                <div class="price-row"><span class="p-label">Lavadora Superior</span> <span class="p-value">$220.000</span></div>
+                <div class="price-row"><span class="p-label">Lavadora Frontal Digital</span> <span class="p-value">$320.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">Secadora Digital</span> <span class="p-value">$320.000</span></div>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-snowflake card-icon"></i>
+                <h3>❄ REFRIGERACIÓN</h3>
+                <div class="price-row"><span class="p-label">Servicio Nevera</span> <span class="p-value">$140.000</span></div>
+                <div class="price-row"><span class="p-label">Servicio Nevecón</span> <span class="p-value">$160.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">Lavavajillas</span> <span class="p-value">$140.000</span></div>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-screwdriver-wrench card-icon"></i>
+                <h3>🛠 SERVICIO TÉCNICO</h3>
+                <div class="price-row"><span class="p-label">S.T. Gasodoméstico</span> <span class="p-value">$100.000</span></div>
+                <div class="price-row"><span class="p-label">S.T. Electrodoméstico</span> <span class="p-value">$150.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">Visita Técnica</span> <span class="p-value">$60.000</span></div>
             </div>
         </div>
 
-        <div class="elite-card" data-aos="fade-up">
-            <h2 class="section-title"><span style="color:var(--blue-tech)">03.</span> CONSULTAS DEL SISTEMA (FAQ)</h2>
-            <div class="faq-item" onclick="toggleF(this)">
-                <div class="faq-header">¿Atienden emergencias el mismo día? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-content">Afirmativo. Disponemos de unidades móviles activas en todo el Valle de Aburrá para garantizar tiempos de respuesta inferiores a 4 horas.</div>
+        <section class="section-title" data-aos="fade-up">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="accent-bar"></div>
+        </section>
+
+        <div class="faq-container" data-aos="fade-up">
+            <div class="faq-item">
+                <div class="faq-question">¿Tienen cobertura en todo Medellín? <i class="fas fa-chevron-down faq-icon"></i></div>
+                <div class="faq-answer">Sí, atendemos en todo el Valle de Aburrá: Medellín, Envigado, Sabaneta, Itagüí, La Estrella, Caldas, Bello, Copacabana, Girardota y Barbosa.</div>
             </div>
-            <div class="faq-item" onclick="toggleF(this)">
-                <div class="faq-header">¿Cuál es el costo del diagnóstico especializado? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-content">El protocolo de revisión tiene un valor de $30.000 COP, los cuales se abonan al costo total de la reparación si decides realizar el trabajo con nosotros.</div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánto tiempo dura la garantía? <i class="fas fa-chevron-down faq-icon"></i></div>
+                <div class="faq-answer">Ofrecemos una garantía certificada de hasta 4 meses por mano de obra y repuestos instalados. Entregamos un documento técnico oficial por cada servicio.</div>
             </div>
-            <div class="faq-item" onclick="toggleF(this)">
-                <div class="faq-header">¿Qué marcas de electrodomésticos soportan? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-content">Soporte integral multimarca: Samsung, LG, Whirlpool, Haceb, Mabe, Bosch, Challenger, Centrales, KitchenAid, Frigidaire y Sub-Zero.</div>
+            <div class="faq-item">
+                <div class="faq-question">¿Si realizo la reparación, debo pagar el valor de la visita? <i class="fas fa-chevron-down faq-icon"></i></div>
+                <div class="faq-answer">No. Si decides realizar el servicio o reparación con nosotros una vez entregado el diagnóstico, el valor de la visita técnica se abona al costo total del trabajo.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué marcas reparan? <i class="fas fa-chevron-down faq-icon"></i></div>
+                <div class="faq-answer">Somos expertos multimarca: Haceb, Bosch, Challenger, LG, Samsung, Whirlpool, Mabe, Electrolux, Abba y marcas importadas de alta gama.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿En qué horarios atienden? <i class="fas fa-chevron-down faq-icon"></i></div>
+                <div class="faq-answer">Nuestro horario de atención es de Lunes a Sábado de 7:00 AM a 6:00 PM. También atendemos urgencias técnicas fuera de horario previa disponibilidad.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué medios de pago aceptan? <i class="fas fa-chevron-down faq-icon"></i></div>
+                <div class="faq-answer">Aceptamos efectivo, transferencias Bancolombia, Nequi y Daviplata al finalizar el servicio para tu mayor comodidad.</div>
             </div>
         </div>
 
+        <section class="section-title" data-aos="fade-up">
+            <h2>Proceso de Servicio</h2>
+            <div class="accent-bar"></div>
+        </section>
+
+        <div class="process-grid">
+            <div class="step-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="step-num">1</div>
+                <h4>Agenda tu Cita</h4>
+                <p style="color:var(--text-muted); font-size:0.85rem;">Escríbenos por WhatsApp y programamos tu visita técnica inmediata.</p>
+            </div>
+            <div class="step-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="step-num">2</div>
+                <h4>Diagnóstico</h4>
+                <p style="color:var(--text-muted); font-size:0.85rem;">Nuestros técnicos expertos revisan tu equipo y dan un presupuesto justo.</p>
+            </div>
+            <div class="step-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="step-num">3</div>
+                <h4>Reparación</h4>
+                <p style="color:var(--text-muted); font-size:0.85rem;">Realizamos el trabajo con repuestos de calidad y normas de seguridad.</p>
+            </div>
+            <div class="step-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="step-num">4</div>
+                <h4>Garantía</h4>
+                <p style="color:var(--text-muted); font-size:0.85rem;">Recibes tu certificado técnico con garantía de hasta 4 meses.</p>
+            </div>
+        </div>
     </div>
 
-    <footer class="pro-footer">
+<!-- SECCIÓN SEO LOCAL: MAPA Y BARRIOS -->
+        <section class="section-title" data-aos="fade-up">
+            <h2>Cobertura Garantizada</h2>
+            <div class="accent-bar"></div>
+            <div style="background: var(--glass); border: 1px solid var(--glass-border); border-radius: 25px; padding: 20px; margin-top: 40px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126916.6358822008!2d-75.6512521!3d6.2442033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80fad27%3A0x43b35306631adbf2!2sMedell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" width="100%" height="350" style="border:0; border-radius:15px; filter: invert(90%) hue-rotate(180deg) brightness(0.8);" allowfullscreen="" loading="lazy"></iframe>
+                <p style="text-align:center; color:var(--text-muted); margin-top:20px;">Atención inmediata en: <b>Poblado, Laureles, Envigado, Sabaneta, Itagüí, Bello y Belén.</b></p>
+            </div>
+        </section>    
+<footer>
         <div class="footer-grid">
-            <div class="footer-col">
-                <h4>VENGAS MEDELLÍN</h4>
-                <p>Ingeniería de soporte técnico domiciliario. Lideramos la reparación de tecnología hogar con honestidad y precisión técnica certificada.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/573238404024"><i class="fab fa-whatsapp"></i></a>
+            <div>
+                <h3 style="color:var(--primary); margin-bottom:10px;">VENGAS ®</h3>
+                <p style="color:var(--text-muted); font-size: 0.85rem;">Técnicos calificados para el diagnóstico, instalación y reparación de equipos del hogar y sistemas de gas.</p>
+                <div class="social-banner">
+                    <a href="https://www.facebook.com/profile.php?id=61580805415732" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/vengas_medellin/reels/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573238404024" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>ÁREA DE COBERTURA</h4>
-                <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> Medellín / El Poblado</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Envigado / Sabaneta</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Bello / Itagüí / La Estrella</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>CENTRAL DE ATENCIÓN</h4>
-                <ul>
-                    <li><i class="fas fa-phone-alt"></i> +57 323 840 4024</li>
-                    <li><i class="fas fa-envelope"></i> soporte@vengasmedellin.com</li>
-                    <li><i class="fas fa-clock"></i> Lun - Sáb: 8:00 AM - 6:00 PM</li>
-                </ul>
+            <div>
+                <h4 style="margin-bottom:10px;">ATENCIÓN</h4>
+                <p style="color:var(--text-muted); font-size: 0.85rem;"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Medellín y alrededores</p>
+                <p style="color:var(--text-muted); font-size: 0.85rem;"><i class="fas fa-phone" style="color:var(--primary);"></i> +57 323 840 4024</p>
+                <p style="color:var(--text-muted); font-size: 0.85rem; margin-top:10px;">📍 Quedamos atentos para programar tu visita.</p>
             </div>
         </div>
-        <div class="footer-bottom" style="margin-top: 60px; text-align: center; font-size: 11px; opacity: 0.5;">
-            VENGAS MEDELLÍN © 2026 :: INGENIERÍA DE ALTO NIVEL :: ANTIOQUIA, COLOMBIA :: v7.0 SECURE_BUILD
+        <div style="text-align:center; margin-top:40px; opacity:0.3; font-size:0.7rem;">
+            © 2026 VENGAS SERVICIOS TÉCNICOS. Medellín, Colombia.
         </div>
     </footer>
 
-    <div class="wa-command">
-        <a href="https://wa.me/573238404024" class="wa-trigger">
-            <div class="wa-status-badge">TÉCNICOS DISPONIBLES</div>
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+    <!-- BOTÓN DE ALTA CONVERSIÓN -->
+    <a href="https://wa.me/573238404024?text=Hola%20Vengas!%20Necesito%20programar%20una%20revisión%20técnica%20lo%20antes%20posible." class="btn-wa" target="_blank">
+        <div class="wa-content">
+            <span class="wa-badge-top">⭐ Calidad Certificada</span>
+            <span class="wa-main-text">PROGRAMAR VISITA AHORA</span>
+            <span class="wa-availability"><span class="pulse-dot"></span> Cupos disponibles hoy en Medellín</span>
+        </div>
+        <i class="fab fa-whatsapp wa-icon-glow"></i>
+    </a>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1200, once: false });
-
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": ["#00f2ff", "#ff8c00"] },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.2, "random": true },
-                "size": { "value": 2 },
-                "line_linked": { "enable": true, "distance": 150, "color": "#00f2ff", "opacity": 0.1, "width": 1 },
-                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "straight": false }
-            }
+        // Carga optimizada: primero el contenido, luego los efectos
+        window.addEventListener('load', () => {
+            AOS.init({ duration: 800, once: true });
+            
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 30, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#00f2ff" },
+                    "opacity": { "value": 0.1 },
+                    "size": { "value": 2 },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#00f2ff", "opacity": 0.05, "width": 1 },
+                    "move": { "enable": true, "speed": 1 }
+                }
+            });
         });
 
-        function updateClock() {
-            const now = new Date();
-            const options = { timeZone: 'America/Bogota', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            document.getElementById('clock').innerText = now.toLocaleTimeString('es-CO', options);
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
+        // Lógica de FAQ
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
 
-        function toggleF(el) {
-            const isActive = el.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
-            if (!isActive) el.classList.add('active');
-        }
-
+        // Aura del cursor
+        const aura = document.getElementById('cursor-aura');
         document.addEventListener('mousemove', (e) => {
-            if(window.innerWidth > 1024) {
-                const logoPortal = document.getElementById('mainPortal');
-                const x = (window.innerWidth / 2 - e.pageX) / 40;
-                const y = (window.innerHeight / 2 - e.pageY) / 40;
-                logoPortal.style.transform = `translateX(${x}px) translateY(${y}px) rotateX(${-y}deg) rotateY(${x}deg)`;
-            }
+            aura.style.left = e.clientX + 'px';
+            aura.style.top = e.clientY + 'px';
         });
-
-        window.onscroll = function() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("topBar").style.width = scrolled + "%";
-        };
     </script>
 </body>
 </html>
