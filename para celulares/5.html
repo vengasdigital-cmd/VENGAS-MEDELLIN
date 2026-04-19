@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="google-site-verification" content="google471d583c7a9d3999" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="VENGAS Medellín - Líderes en reparación de electrodomésticos y gasdomésticos. Soporte técnico de alta ingeniería.">
+    <meta name="theme-color" content="#010409">
+    <title>VENGAS Medellín | Ingeniería de Soporte Técnico Superior v9.8</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* ============================================================
+           SISTEMA DE VARIABLES DE ALTO RENDIMIENTO (ROOT CORE)
+           ============================================================ */
+        :root {
+            --primary-orange: #ff8c00;
+            --secondary-orange: #ff6a00;
+            --tech-blue: #00f2ff;
+            --deep-blue: #008b94;
+            --glow-orange: rgba(255, 140, 0, 0.55);
+            --glow-blue: rgba(0, 242, 255, 0.45);
+            --bg-dark-01: #010409;
+            --bg-dark-02: #0a0f18;
+            --bg-dark-03: #0d1117;
+            --glass-alpha: rgba(255, 255, 255, 0.035);
+            --glass-border: rgba(255, 255, 255, 0.085);
+            --text-pure: #ffffff;
+            --text-mute: #a1a1a1;
+            --font-main: 'Poppins', sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+            --transition-ultra: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* RESETEO TOTAL DEL MOTOR DE RENDERIZADO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* DETALLE: SELECCIÓN DE TEXTO */
+        ::selection { background: var(--tech-blue); color: #000; }
+
+        /* DETALLE: SCROLLBAR PERSONALIZADO */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark-01); }
+        ::-webkit-scrollbar-thumb { 
+            background: linear-gradient(var(--tech-blue), var(--primary-orange)); 
+            border-radius: 10px; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+            overflow-x: hidden;
+            background-color: var(--bg-dark-01);
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark-01);
+            color: var(--text-pure);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================================================
+           CAPA DE EFECTOS VISUALES (VISUAL FX LAYERS)
+           ============================================================ */
+        .ui-progress-bar {
+            position: fixed; top: 0; left: 0; width: 0%; height: 6px;
+            background: linear-gradient(90deg, var(--tech-blue), var(--primary-orange), var(--tech-blue));
+            background-size: 200% 100%;
+            z-index: 10000; box-shadow: 0 0 25px var(--tech-blue);
+            animation: gradient-flow 3s linear infinite;
+        }
+
+        @keyframes gradient-flow { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+
+        #particles-js {
+            position: fixed; width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(circle at center, #0d1421 0%, #010409 100%);
+        }
+
+        .scanline-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 255, 0, 0.02));
+            background-size: 100% 3px, 3px 100%; z-index: 9998; pointer-events: none; opacity: 0.3;
+        }
+
+        /* ============================================================
+           HEADER DE CONTROL (NAVBAR v9.0)
+           ============================================================ */
+        .nav-core {
+            position: fixed; top: 0; width: 100%; z-index: 9500;
+            background: rgba(1, 4, 9, 0.9);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            border-bottom: 2px solid var(--tech-blue);
+            padding: 18px 50px;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        }
+
+        .nav-status {
+            display: flex; align-items: center; gap: 15px;
+            font-family: var(--font-code); font-size: 12px; font-weight: 700;
+        }
+
+        .pulse-online {
+            width: 12px; height: 12px; background: #00ff41; border-radius: 50%;
+            box-shadow: 0 0 15px #00ff41; animation: pulse-ring 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+
+        @keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 0.8; } 50% { transform: scale(1.3); opacity: 0.4; } 100% { transform: scale(0.8); opacity: 0.8; } }
+
+        .time-display {
+            background: rgba(0, 242, 255, 0.1); border: 1px solid var(--tech-blue);
+            padding: 6px 20px; border-radius: 6px; font-weight: 900;
+            color: var(--text-pure); text-shadow: 0 0 10px var(--tech-blue);
+        }
+
+        /* ============================================================
+           HERO SECTION (TITANIUM INTERFACE)
+           ============================================================ */
+        .hero-engine {
+            min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            padding: 180px 30px 100px; text-align: center;
+        }
+
+        .portal-v9 {
+            position: relative; width: 320px; height: 320px;
+            margin-bottom: 60px; transition: var(--transition-ultra);
+            perspective: 1000px;
+        }
+
+        /* DETALLE: EFECTO PULSO Y SATURACIÓN AL LOGO */
+        .portal-image {
+            width: 100%; height: 100%; object-fit: contain;
+            border-radius: 50%; padding: 35px;
+            background: var(--bg-dark-02);
+            border: 4px solid var(--primary-orange);
+            box-shadow: 0 0 80px var(--glow-orange);
+            z-index: 2; position: relative;
+            filter: contrast(1.1) brightness(1.1);
+            animation: portal-pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes portal-pulse {
+            0%, 100% { box-shadow: 0 0 50px var(--glow-orange); border-color: var(--primary-orange); transform: scale(1); }
+            50% { box-shadow: 0 0 90px var(--glow-blue); border-color: var(--tech-blue); transform: scale(1.02); }
+        }
+
+        .laser-scanner {
+            position: absolute; width: 150%; height: 4px;
+            background: linear-gradient(90deg, transparent, var(--tech-blue), var(--primary-orange), transparent);
+            left: -25%; z-index: 10; filter: blur(1px) drop-shadow(0 0 8px var(--tech-blue));
+            animation: move-laser 5s ease-in-out infinite;
+        }
+
+        @keyframes move-laser { 0%, 100% { top: 0%; opacity: 0; } 50% { top: 100%; opacity: 1; } }
+
+        .hero-h1 {
+            font-size: clamp(3rem, 12vw, 7.5rem); font-weight: 900;
+            line-height: 0.82; letter-spacing: -6px; text-transform: uppercase;
+            margin-bottom: 40px; 
+            background: linear-gradient(to bottom, #fff 50%, #666);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+        }
+
+        .hero-h1 span { color: var(--primary-orange); -webkit-text-fill-color: var(--primary-orange); }
+
+        .marquee-container {
+            width: 100vw; background: rgba(255,255,255,0.015);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 30px 0; margin: 60px 0; overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex; width: max-content; gap: 100px;
+            animation: marquee-run 35s linear infinite;
+        }
+
+        /* DETALLE: EFECTO HOVER EN MARCAS */
+        .marquee-item {
+            font-size: 1.6rem; font-weight: 900; color: #444;
+            letter-spacing: 6px; text-transform: uppercase;
+            transition: 0.4s; cursor: pointer;
+        }
+
+        .marquee-item:hover { 
+            color: var(--tech-blue); 
+            text-shadow: 0 0 20px var(--tech-blue); 
+            transform: scale(1.1) skewX(-5deg); 
+        }
+
+        @keyframes marquee-run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        .dashboard-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px; width: 100%; max-width: 1200px; margin-top: 40px;
+        }
+
+        .dash-card {
+            background: var(--bg-dark-02); border: 1px solid var(--tech-blue);
+            padding: 35px; border-radius: 25px; display: flex; align-items: center;
+            gap: 20px; transition: var(--transition-ultra);
+            box-shadow: 0 15px 45px rgba(0, 242, 255, 0.1);
+        }
+
+        .dash-card:hover { transform: translateY(-12px); box-shadow: 0 25px 60px rgba(0, 242, 255, 0.25); border-color: var(--primary-orange); }
+        .dash-card i { font-size: 2.2rem; color: var(--primary-orange); }
+        .dash-card .info b { display: block; font-size: 1.3rem; color: var(--tech-blue); line-height: 1.2; }
+        .dash-card .info span { font-size: 10px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 2px; }
+
+        .cta-v9 {
+            margin-top: 80px; padding: 28px 75px;
+            background: #fff; color: #000; border-radius: 100px;
+            font-size: 1.3rem; font-weight: 900; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 20px;
+            box-shadow: 0 25px 60px rgba(0, 242, 255, 0.4);
+            transition: var(--transition-ultra);
+            border: 4px solid transparent;
+        }
+
+        .cta-v9:hover {
+            background: var(--primary-orange); color: #fff;
+            transform: scale(1.08) translateY(-10px);
+            box-shadow: 0 35px 80px var(--glow-orange);
+        }
+
+        /* ============================================================
+           SISTEMA DE MÓDULOS DE CONTENIDO (MAIN CONTENT)
+           ============================================================ */
+        .master-container { max-width: 1300px; margin: 0 auto; padding: 120px 25px; }
+
+        .module-box {
+            background: var(--bg-dark-03); border: 1px solid var(--glass-border);
+            border-radius: 60px; padding: 100px 70px; margin-bottom: 100px;
+            position: relative; overflow: hidden;
+            transition: var(--transition-ultra);
+        }
+
+        .module-box:hover { border-color: var(--tech-blue); box-shadow: 0 50px 120px rgba(0,0,0,0.8); }
+
+        .module-id {
+            font-family: var(--font-code); color: var(--tech-blue);
+            font-size: 1.2rem; margin-bottom: 20px; display: block; opacity: 0.6;
+        }
+
+        .module-title {
+            font-size: 3rem; font-weight: 900; margin-bottom: 60px;
+            border-left: 10px solid var(--primary-orange); padding-left: 40px;
+        }
+
+        .services-matrix {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;
+        }
+
+        .service-card-v9 {
+            background: rgba(255,255,255,0.025); border: 1px solid var(--glass-border);
+            padding: 55px; border-radius: 45px; transition: 0.6s;
+            position: relative;
+        }
+
+        .service-card-v9::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 242, 255, 0.05));
+            opacity: 0; transition: 0.6s; border-radius: 45px;
+        }
+
+        .service-card-v9:hover {
+            transform: translateY(-15px) rotate(1deg); border-color: var(--primary-orange);
+        }
+
+        .service-card-v9:hover::before { opacity: 1; }
+        .service-card-v9 i { font-size: 4rem; color: var(--primary-orange); margin-bottom: 30px; display: block; }
+        .service-card-v9 h3 { font-size: 2rem; color: var(--tech-blue); margin-bottom: 20px; }
+        .service-card-v9 p { color: var(--text-mute); font-size: 1.1rem; }
+
+        /* ============================================================
+           SISTEMA DE FAQ (ULTRA-ACCORDION)
+           ============================================================ */
+        .faq-v9-wrapper { margin-top: 50px; }
+        .faq-v9-item {
+            border-bottom: 1px solid var(--glass-border); padding: 40px 15px;
+            cursor: pointer; transition: 0.5s;
+        }
+
+        .faq-v9-item:hover { background: rgba(255,255,255,0.02); }
+        .faq-v9-q { display: flex; justify-content: space-between; align-items: center; font-size: 1.5rem; font-weight: 800; }
+        .faq-v9-q i { color: var(--primary-orange); transition: 0.5s transform; }
+        
+        .faq-v9-a {
+            max-height: 0; overflow: hidden; transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            color: var(--text-mute); font-size: 1.2rem; padding-top: 0;
+        }
+
+        .faq-v9-item.active .faq-v9-a { max-height: 400px; padding-top: 30px; }
+        .faq-v9-item.active .faq-v9-q i { transform: rotate(180deg); color: var(--tech-blue); }
+
+        /* ============================================================
+           FOOTER SUPREMO (v9.0)
+           ============================================================ */
+        .footer-terminal {
+            background: linear-gradient(to top, #000, #0a0f18);
+            border-top: 4px solid var(--tech-blue);
+            padding: 150px 50px 80px;
+        }
+
+        .footer-columns {
+            max-width: 1300px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 100px;
+        }
+
+        .col-f h4 {
+            color: var(--tech-blue); font-size: 1.2rem; letter-spacing: 6px;
+            text-transform: uppercase; margin-bottom: 45px; position: relative;
+        }
+
+        .col-f h4::after {
+            content: ''; position: absolute; bottom: -10px; left: 0; width: 50px; height: 3px; background: var(--primary-orange);
+        }
+
+        .social-dock { display: flex; gap: 25px; margin-top: 40px; }
+        .dock-btn {
+            width: 65px; height: 65px; background: rgba(0, 242, 255, 0.05);
+            border: 1px solid var(--tech-blue); border-radius: 20px;
+            display: flex; justify-content: center; align-items: center;
+            color: #fff; font-size: 1.8rem; text-decoration: none; transition: 0.5s;
+        }
+
+        .dock-btn:hover {
+            background: var(--tech-blue); color: #000;
+            box-shadow: 0 0 40px var(--tech-blue); transform: translateY(-10px) rotate(10deg);
+        }
+
+        .contact-entry { margin-bottom: 25px; display: flex; align-items: center; gap: 20px; color: #fff; font-size: 1.1rem; }
+        .contact-entry i { color: var(--primary-orange); font-size: 1.4rem; width: 30px; }
+
+        /* ============================================================
+           NOTIFICACIONES FLOTANTES (UI/UX)
+           ============================================================ */
+        .toast-container {
+            position: fixed; bottom: 160px; right: 50px; z-index: 9999;
+            pointer-events: none;
+        }
+
+        .toast-msg {
+            background: rgba(1, 4, 9, 0.9); border: 1px solid var(--tech-blue);
+            padding: 15px 25px; border-radius: 12px; margin-top: 15px;
+            font-family: var(--font-code); font-size: 11px; color: var(--tech-blue);
+            animation: toast-in 5s forwards; opacity: 0;
+        }
+
+        @keyframes toast-in { 0% { opacity: 0; transform: translateX(50px); } 10% { opacity: 1; transform: translateX(0); } 90% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* ============================================================
+           SISTEMA WHATSAPP OVERDRIVE
+           ============================================================ */
+        .wa-overdrive { position: fixed; bottom: 50px; right: 50px; z-index: 9999; }
+        .wa-sphere {
+            width: 95px; height: 95px; background: #25D366; border-radius: 30px;
+            display: flex; justify-content: center; align-items: center;
+            color: #fff; font-size: 50px; text-decoration: none;
+            box-shadow: 0 25px 60px rgba(37,211,102,0.5); transition: 0.6s;
+            position: relative;
+        }
+
+        .wa-sphere:hover { transform: scale(1.15) rotate(-10deg); }
+        .wa-status-label {
+            position: absolute; top: -15px; right: 0; background: #fff; color: #000;
+            padding: 10px 20px; border-radius: 50px; font-weight: 900; font-size: 11px;
+            border: 3px solid #25D366; white-space: nowrap; box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        /* ============================================================
+           RESPONSIVE ENGINE (ULTRA ADAPTIVE)
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .nav-core { padding: 15px 30px; }
+            .module-box { padding: 80px 40px; border-radius: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-engine { padding-top: 140px; }
+            .hero-h1 { font-size: 3.8rem; letter-spacing: -3px; }
+            .portal-v9 { width: 220px; height: 220px; }
+            .module-title { font-size: 2.2rem; }
+            .services-matrix { grid-template-columns: 1fr; }
+            .wa-sphere { width: 80px; height: 80px; font-size: 40px; }
+            .toast-container { right: 20px; bottom: 140px; }
+            .nav-status span { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ui-progress-bar" id="readingProgress"></div>
+    <div class="scanline-overlay"></div>
+    <div id="particles-js"></div>
+
+    <div class="toast-container">
+        <div class="toast-msg">>> SYSTEM_BOOT: COMPLETED</div>
+        <div class="toast-msg" style="animation-delay: 2s;">>> SECURITY_PROTOCOLS: ENFORCED</div>
+        <div class="toast-msg" style="animation-delay: 4s;">>> LOCATION_SYNC: MEDELLÍN_HQ</div>
+    </div>
+
+    <header class="nav-core">
+        <div class="nav-status">
+            <div class="pulse-online"></div>
+            <span>VENGAS_CORE_v9.8 // <span style="color:var(--primary-orange)">SOPORTE_ACTIVO</span></span>
+        </div>
+        <div class="time-display" id="clockBox">00:00:00</div>
+        <div style="font-family: var(--font-code); font-weight: 800; font-size: 13px; opacity: 0.7;">ANTIOQUIA_REGION</div>
+    </header>
+
+    <section class="hero-engine">
+        <div class="portal-v9" data-aos="flip-left" id="mainCorePortal">
+            <div class="laser-scanner"></div>
+            <img src="logo.png" alt="VENGAS INGENIERÍA" class="portal-image">
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="400" style="width: 100%;">
+            <h1 class="hero-h1">INGENIERÍA<span> TÉCNICA</span><br>DE SOPORTE GLOBAL</h1>
+            
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <div class="marquee-item">Samsung</div><div class="marquee-item">LG Electronics</div>
+                    <div class="marquee-item">Whirlpool Corp</div><div class="marquee-item">Haceb</div>
+                    <div class="marquee-item">Bosch Global</div><div class="marquee-item">Mabe</div>
+                    <div class="marquee-item">KitchenAid</div><div class="marquee-item">Challenger</div>
+                    <div class="marquee-item">Samsung</div><div class="marquee-item">LG Electronics</div>
+                    <div class="marquee-item">Whirlpool Corp</div><div class="marquee-item">Haceb</div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dash-card">
+                    <i class="fas fa-microchip"></i>
+                    <div class="info"><b>INGENIEROS SENIOR</b><span>Expertise Digital</span></div>
+                </div>
+                <div class="dash-card">
+                    <i class="fas fa-gauge-high"></i>
+                    <div class="info"><b>ATENCIÓN EXPRESS</b><span>Mismo Día</span></div>
+                </div>
+                <div class="dash-card">
+                    <i class="fas fa-shield-virus"></i>
+                    <div class="info"><b>120 DÍAS FULL</b><span>Garantía Técnica</span></div>
+                </div>
+            </div>
+
+            <a href="https://wa.me/573238404024" class="cta-v9">
+                <i class="fab fa-whatsapp"></i> ABRIR TICKET DE REVISIÓN
+            </a>
+        </div>
+    </section>
+
+    <main class="master-container">
+
+        <section class="module-box" data-aos="fade-up">
+            <span class="module-id">ID_SYS_PROTOCOL_001</span>
+            <h2 class="module-title">DIVISIONES DE INGENIERÍA</h2>
+            <div class="services-matrix">
+                <article class="service-card-v9">
+                    <i class="fas fa-screwdriver-wrench"></i>
+                    <h3>Lavado Avanzado</h3>
+                    <p>Diagnóstico computarizado de tarjetas lógicas, balanceo de transmisiones y mantenimiento preventivo estructural.</p>
+                </article>
+                <article class="service-card-v9">
+                    <i class="fas fa-wind"></i>
+                    <h3>Sistemas Térmicos</h3>
+                    <p>Carga de gas ecológico R600/R134, reparación de compresores Inverter y calibración de termostatos digitales.</p>
+                </article>
+                <article class="service-card-v9">
+                    <i class="fas fa-fire-alt"></i>
+                    <h3>Gasdomésticos</h3>
+                    <p>Ajuste de combustión, cambio de termocuplas y reparación de válvulas de seguridad bajo normas NTC.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="module-box" data-aos="fade-right">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 80px; align-items: center;">
+                <div>
+                    <span class="module-id">ID_SYS_QUALITY_002</span>
+                    <h2 class="module-title">KPI DE SATISFACCIÓN</h2>
+                    <ul style="list-style: none;">
+                        <li class="contact-entry"><i class="fas fa-check-circle"></i> Soporte técnico certificado multi-marca.</li>
+                        <li class="contact-entry"><i class="fas fa-check-circle"></i> Trazabilidad digital de cada reparación.</li>
+                        <li class="contact-entry"><i class="fas fa-check-circle"></i> Protocolos de seguridad domiciliaria.</li>
+                        <li class="contact-entry"><i class="fas fa-check-circle"></i> Precios estandarizados y transparentes.</li>
+                    </ul>
+                </div>
+                <div style="text-align: center; background: rgba(0,242,255,0.05); padding: 70px; border-radius: 50px; border: 2px solid var(--tech-blue);">
+                    <div class="kpi-counter" style="font-size: 6rem; font-weight: 900; color: var(--tech-blue); line-height: 1;">4.9</div>
+                    <div style="color: gold; font-size: 2.2rem; margin: 25px 0;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p style="font-family: var(--font-code); font-size: 12px; letter-spacing: 4px; opacity: 0.6;">RATING DE USUARIOS</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="module-box" data-aos="fade-up">
+            <span class="module-id">ID_SYS_KNOWLEDGE_003</span>
+            <h2 class="module-title">CENTRO DE CONSULTAS</h2>
+            <div class="faq-v9-wrapper">
+                <div class="faq-v9-item" onclick="toggleV9Faq(this)">
+                    <div class="faq-v9-q">¿Cuál es el radio de cobertura técnica? <i class="fas fa-plus-circle"></i></div>
+                    <div class="faq-v9-a">Operamos en todo el Valle de Aburrá: Medellín, Bello, Itagüí, Envigado, Sabaneta, La Estrella, Caldas y Copacabana. Incluyendo el Oriente Antioqueño.</div>
+                </div>
+                <div class="faq-v9-item" onclick="toggleV9Faq(this)">
+                    <div class="faq-v9-q">¿Qué incluye la visita técnica? <i class="fas fa-plus-circle"></i></div>
+                    <div class="faq-v9-a">Incluye desplazamiento del ingeniero, diagnóstico especializado con herramientas de medición y presupuesto formal. Si reparas, la visita es GRATIS (se descuenta).</div>
+                </div>
+                <div class="faq-v9-item" onclick="toggleV9Faq(this)">
+                    <div class="faq-v9-q">¿Cómo se respalda la garantía? <i class="fas fa-plus-circle"></i></div>
+                    <div class="faq-v9-a">Emitimos una certificación de servicio con validez de 120 días que cubre mano de obra y componentes sustituidos, vinculada a nuestro sistema de soporte 24/7.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-terminal">
+        <div class="footer-columns">
+            <div class="col-f">
+                <h4>VENGAS_ANTIOQUIA</h4>
+                <p>Infraestructura técnica líder en el soporte domiciliario. Aplicamos ingeniería de precisión para garantizar la vida útil de sus activos domésticos con los más altos estándares del mercado.</p>
+                <div class="social-dock">
+                    <a href="https://www.facebook.com/people/Vengas-Servicio-T%C3%A9cnico-Gas-y-Electrodom%C3%A9sticos/61580805415732/" class="dock-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/vengas_medellin/" class="dock-btn" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573238404024" class="dock-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="col-f">
+                <h4>DATOS_NODO_CENTRAL</h4>
+                <div class="contact-entry"><i class="fas fa-headset"></i> +57 323 840 4024</div>
+                <div class="contact-entry"><i class="fas fa-at"></i> vengas.medellin@gmail.com</div>
+                <div class="contact-entry"><i class="fas fa-map-marked-alt"></i> Medellín, Valle de Aburrá</div>
+            </div>
+            <div class="col-f">
+                <h4>CICLOS_OPERATIVOS</h4>
+                <div class="contact-entry"><i class="fas fa-calendar-alt"></i> LUN - VIE: 08:00 - 18:00</div>
+                <div class="contact-entry"><i class="fas fa-calendar-day"></i> SÁBADO: 08:00 - 16:00</div>
+                <div class="contact-entry" style="color:var(--tech-blue)"><i class="fas fa-microchip"></i> SOPORTE DIGITAL 24/7</div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 120px; padding-top: 40px; border-top: 1px solid var(--glass-border); font-family: var(--font-code); font-size: 11px; opacity: 0.4; letter-spacing: 4px;">
+            VENGAS MEDELLÍN © 2026 // TITANIUM_EDITION // BY_AI_CORE
+        </div>
+    </footer>
+
+    <div class="wa-overdrive">
+        <a href="https://wa.me/573238404024" class="wa-sphere">
+            <div class="wa-status-label">INGENIERO ASIGNADO: ONLINE</div>
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // MOTOR DE ANIMACIONES AOS
+        AOS.init({ duration: 1400, once: false, mirror: true, easing: 'ease-in-out-quart' });
+
+        // MOTOR DE PARTÍCULAS TITANIUM
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 110, "density": { "enable": true, "value_area": 900 } },
+                "color": { "value": ["#00f2ff", "#ff8c00", "#ffffff"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": true },
+                "size": { "value": 2.5, "random": true },
+                "line_linked": { "enable": true, "distance": 140, "color": "#00f2ff", "opacity": 0.15, "width": 1 },
+                "move": { "enable": true, "speed": 1.8, "direction": "none", "out_mode": "out" }
+            },
+            "interactivity": {
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "bubble" } }
+            }
+        });
+
+        // RELOJ NUCLEAR DE PRECISIÓN
+        function initClock() {
+            const box = document.getElementById('clockBox');
+            const tic = () => {
+                const now = new Date();
+                box.innerText = now.toLocaleTimeString('es-CO', { hour12: false, timeZone: 'America/Bogota' });
+            };
+            setInterval(tic, 1000); tic();
+        }
+        initClock();
+
+        // CONTROLADOR DE FAQ v9.0
+        function toggleV9Faq(el) {
+            const active = el.classList.contains('active');
+            document.querySelectorAll('.faq-v9-item').forEach(i => i.classList.remove('active'));
+            if (!active) el.classList.add('active');
+        }
+
+        // BARRA DE PROGRESO DINÁMICA
+        window.onscroll = () => {
+            const win = document.body.scrollTop || document.documentElement.scrollTop;
+            const high = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = document.getElementById("readingProgress");
+            if(progress) progress.style.width = (win / high) * 100 + "%";
+        };
+
+        // PARALLAX AVANZADO (MAIN CORE)
+        document.addEventListener('mousemove', (e) => {
+            if(window.innerWidth > 1024) {
+                const portal = document.getElementById('mainCorePortal');
+                const degX = (window.innerHeight / 2 - e.pageY) / 35;
+                const degY = (window.innerWidth / 2 - e.pageX) / 35;
+                portal.style.transform = `rotateX(${degX}deg) rotateY(${-degY}deg) scale(1.05)`;
+            }
+        });
+
+        // MOTOR DE CONTEO DINÁMICO PARA KPI
+        const observerOptions = { threshold: 0.5 };
+        const kpiObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const endValue = parseFloat(target.innerText);
+                    let startValue = 0;
+                    const duration = 2000;
+                    const stepTime = 50;
+                    const steps = duration / stepTime;
+                    const increment = endValue / steps;
+                    const timer = setInterval(() => {
+                        startValue += increment;
+                        if (startValue >= endValue) {
+                            target.innerText = endValue.toFixed(1);
+                            clearInterval(timer);
+                        } else {
+                            target.innerText = startValue.toFixed(1);
+                        }
+                    }, stepTime);
+                    kpiObserver.unobserve(target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.kpi-counter').forEach(el => kpiObserver.observe(el));
+
+        // SIMULACIÓN DE LOGS EN CONSOLA
+        console.log("%cVENGAS MEDELLÍN v9.8 FINAL", "color: #ff8c00; font-size: 30px; font-weight: bold;");
+        console.log("%cSystem Protocol: Active", "color: #00f2ff; font-size: 15px;");
+    </script>
+</body>
+</html>

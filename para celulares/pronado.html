@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- MEJORA SEO: Título Corto y Directo (Lo que verán en Google) -->
+    <title>VENGAS | Reparación de Lavadoras, Neveras y Calentadores en Medellín</title>
+    
+    <!-- Descripción Persuasiva -->
+    <meta name="description" content="¿Tu electrodoméstico falló? Reparamos Lavadoras, Neveras y Calentadores en Medellín con técnicos expertos. Garantía de 4 meses. ¡Agenda hoy por WhatsApp!">
+    
+    <!-- IDENTIDAD DE MARCA (Corrige el nombre en buscadores y redes sociales) -->
+    <meta property="og:site_name" content="Vengas Medellín">
+    <meta property="og:title" content="Vengas Medellín | Ingeniería de Hogar">
+    <meta property="og:description" content="Reparación experta de lavadoras y calentadores con garantía certificada.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/">
+    <meta property="og:type" content="website">
+
+    <!-- SEO LOCAL: Datos Estructurados para Google Maps -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Vengas Medellín",
+      "image": "logo.png",
+      "telephone": "+573238404024",
+      "url": "https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Medellín",
+        "addressLocality": "Medellín",
+        "addressRegion": "Antioquia",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.244203,
+        "longitude": -75.581211
+      }
+    }
+    </script>
+
+    <!-- Fuentes y Estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&family=JetBrains+Mono:wght@500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <style>
+        :root {
+            --primary: #00f2ff;
+            --primary-glow: rgba(0, 242, 255, 0.4);
+            --accent: #ff9f43;
+            --bg-dark: #020617;
+            --glass: rgba(15, 23, 42, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-muted: #cbd5e1;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        body { background: var(--bg-dark); color: #f1f5f9; font-family: 'Outfit', sans-serif; overflow-x: hidden; line-height: 1.6; }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
+        #cursor-aura { position: fixed; width: 450px; height: 450px; background: radial-gradient(circle, rgba(0, 242, 255, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; transform: translate(-50%, -50%); transition: 0.1s linear; }
+
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(25px); padding: 12px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--glass-border); }
+        .logo-box { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; background: #000; overflow: hidden; box-shadow: 0 0 15px var(--primary-glow); }
+        .logo-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .container { max-width: 1240px; margin: 0 auto; padding: 120px 6% 60px; position: relative; z-index: 1; }
+        .hero { min-height: 50vh; display: flex; flex-direction: column; justify-content: center; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 0.9; margin-bottom: 25px; text-transform: uppercase; }
+        .grad { background: linear-gradient(90deg, var(--primary), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Typewriter Effect */
+        .typewriter-text { color: var(--primary); font-family: 'JetBrains Mono'; font-weight: 800; border-right: 2px solid var(--primary); padding-right: 5px; animation: blink-cursor 0.75s step-end infinite; }
+        @keyframes blink-cursor { from, to { border-color: transparent } 50% { border-color: var(--primary); } }
+
+        .badge-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; }
+        .badge { background: rgba(255,255,255,0.05); padding: 8px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; border: 1px solid var(--glass-border); color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+
+        .brands-slider { background: rgba(0,0,0,0.3); padding: 30px 0; overflow: hidden; margin: 40px 0; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
+        .brands-track { display: flex; width: calc(200px * 14); animation: scrollBrands 25s linear infinite; }
+        .brand-item { width: 200px; text-align: center; color: #fff; font-weight: 900; font-size: 1.2rem; opacity: 0.4; letter-spacing: 2px; }
+        @keyframes scrollBrands { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-200px * 7)); } }
+
+        .section-title { text-align: center; margin: 80px 0 40px; }
+        .section-title h2 { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; }
+        .accent-bar { width: 50px; height: 5px; background: var(--accent); margin: 15px auto; border-radius: 10px; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .glass-card { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 25px; padding: 30px; transition: 0.4s; }
+        .glass-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 242, 255, 0.1); }
+        .card-icon { font-size: 1.6rem; color: var(--accent); margin-bottom: 15px; display: block; }
+
+        .price-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .p-label { font-size: 0.85rem; color: #cbd5e1; }
+        .p-value { font-family: 'JetBrains Mono'; font-weight: 800; color: var(--primary); font-size: 0.9rem; background: rgba(0,242,255,0.05); padding: 2px 8px; border-radius: 5px; }
+
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 15px; margin-bottom: 10px; overflow: hidden; }
+        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; transition: 0.3s; }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s ease-out; color: var(--text-muted); font-size: 0.9rem; }
+        .faq-item.active .faq-answer { padding: 0 20px 20px; max-height: 250px; }
+        .faq-item.active .faq-question { color: var(--primary); }
+
+        footer { background: #01040a; padding: 60px 8% 120px; border-top: 1px solid var(--glass-border); margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .social-banner { display: flex; gap: 15px; margin-top: 20px; }
+        .social-icon { width: 45px; height: 45px; border-radius: 12px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; border: 1px solid var(--glass-border); transition: 0.3s; font-size: 1.2rem; }
+        .social-icon:hover { background: var(--primary); color: #000; transform: translateY(-3px); }
+
+        .btn-wa { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 420px; z-index: 2000; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); padding: 12px 25px; border-radius: 24px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: white; font-weight: 800; box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4); transition: 0.4s; overflow: hidden; }
+        .btn-wa::before { content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent); animation: shine 3s infinite; }
+        @keyframes shine { 0% { left: -100%; } 30% { left: 100%; } 100% { left: 100%; } }
+        .wa-content { display: flex; flex-direction: column; line-height: 1.2; }
+        .wa-main-text { font-size: 1.15rem; font-weight: 900; }
+        .wa-availability { font-size: 0.6rem; color: #afffca; display: flex; align-items: center; gap: 4px; }
+        .pulse-dot { width: 7px; height: 7px; background: #afffca; border-radius: 50%; animation: dot-pulse 1.5s infinite; }
+        @keyframes dot-pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
+
+        @media (max-width: 768px) { .hero { text-align: center; } .badge-grid { justify-content: center; } }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    <div id="cursor-aura"></div>
+
+    <nav>
+        <div class="logo-box"><img src="logo.png" alt="VENGAS"></div>
+        <div style="font-family:'JetBrains Mono'; font-size:0.65rem; color:var(--primary); font-weight:800;">[ VENGAS_PRO_2026 ]</div>
+    </nav>
+
+    <div class="container">
+        <header class="hero" data-aos="fade-up">
+            <h1>VENGAS MEDELLÍN <br><span class="grad">INGENIERÍA DE HOGAR</span></h1>
+            
+            <!-- Typewriter Display -->
+            <p style="font-size: 1.1rem; min-height: 3rem; color: var(--text-muted); max-width: 750px; margin-top: 10px;">
+                Servicio experto en: <span id="typewriter" class="typewriter-text"></span>
+            </p>
+
+            <div class="badge-grid">
+                <span class="badge"><i class="fas fa-shield-alt"></i> GARANTÍA 4 MESES</span>
+                <span class="badge"><i class="fas fa-bolt"></i> ATENCIÓN HOY</span>
+                <span class="badge"><i class="fas fa-home"></i> A DOMICILIO</span>
+            </div>
+        </header>
+
+        <div class="brands-slider">
+            <div class="brands-track">
+                <div class="brand-item">HACEB</div><div class="brand-item">BOSCH</div><div class="brand-item">CHALLENGER</div>
+                <div class="brand-item">LG</div><div class="brand-item">SAMSUNG</div><div class="brand-item">WHIRLPOOL</div><div class="brand-item">MABE</div>
+                <div class="brand-item">HACEB</div><div class="brand-item">BOSCH</div><div class="brand-item">CHALLENGER</div>
+                <div class="brand-item">LG</div><div class="brand-item">SAMSUNG</div><div class="brand-item">WHIRLPOOL</div><div class="brand-item">MABE</div>
+            </div>
+        </div>
+
+        <section class="section-title" data-aos="fade-up">
+            <h2>Portafolio de Servicios</h2>
+            <div class="accent-bar"></div>
+        </section>
+
+        <div class="services-grid">
+            <div class="glass-card" data-aos="fade-up">
+                <i class="fas fa-fire card-icon"></i>
+                <h3>🔥 CUBIERTAS</h3>
+                <div class="price-row"><span class="p-label">4 Puestos (Vidrio/Inox)</span> <span class="p-value">$130.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">5 Puestos (Vidrio/Inox)</span> <span class="p-value">$180.000</span></div>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-tint card-icon"></i>
+                <h3>💧 CALENTADORES</h3>
+                <div class="price-row"><span class="p-label">Paso 5.5 LT</span> <span class="p-value">$130.000</span></div>
+                <div class="price-row"><span class="p-label">8 a 14 LT</span> <span class="p-value">$160.000</span></div>
+                <div class="price-row"><span class="p-label">Therm 8000</span> <span class="p-value">$300.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">Acumulación</span> <span class="p-value">$140.000</span></div>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-tools card-icon"></i>
+                <h3>🔧 INSTALACIONES GAS</h3>
+                <div class="price-row"><span class="p-label">Revisión Prevención</span> <span class="p-value">$80.000</span></div>
+                <div class="price-row"><span class="p-label">Instalación Pto Cero</span> <span class="p-value">$200.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">Desinstalar e Instalar</span> <span class="p-value">$170.000</span></div>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up">
+                <i class="fas fa-tshirt card-icon"></i>
+                <h3>👕 LAVADO Y SECADO</h3>
+                <div class="price-row"><span class="p-label">Lavadora Superior</span> <span class="p-value">$220.000</span></div>
+                <div class="price-row"><span class="p-label">Lavadora Frontal Digital</span> <span class="p-value">$320.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">Secadora Digital</span> <span class="p-value">$320.000</span></div>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-snowflake card-icon"></i>
+                <h3>❄ REFRIGERACIÓN</h3>
+                <div class="price-row"><span class="p-label">Servicio Nevera</span> <span class="p-value">$140.000</span></div>
+                <div class="price-row"><span class="p-label">Servicio Nevecón</span> <span class="p-value">$160.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">Lavavajillas</span> <span class="p-value">$140.000</span></div>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-screwdriver-wrench card-icon"></i>
+                <h3>🛠 SERVICIO TÉCNICO</h3>
+                <div class="price-row"><span class="p-label">S.T. Gasodoméstico</span> <span class="p-value">$100.000</span></div>
+                <div class="price-row"><span class="p-label">S.T. Electrodoméstico</span> <span class="p-value">$150.000</span></div>
+                <div class="price-row" style="border:none;"><span class="p-label">Visita Técnica</span> <span class="p-value">$60.000</span></div>
+            </div>
+        </div>
+
+        <section class="section-title" data-aos="fade-up">
+            <h2>Cobertura Garantizada</h2>
+            <div class="accent-bar"></div>
+            <div style="background: var(--glass); border: 1px solid var(--glass-border); border-radius: 25px; padding: 20px; margin-top: 40px; text-align: center;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126916.6358822008!2d-75.6512521!3d6.2442033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80fad27%3A0x43b35306631adbf2!2sMedell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" width="100%" height="350" style="border:0; border-radius:15px; filter: invert(90%) hue-rotate(180deg) brightness(0.8);" allowfullscreen="" loading="lazy"></iframe>
+                <p style="color:var(--text-muted); margin-top:20px;">Atención inmediata en: <b>Poblado, Laureles, Envigado, Sabaneta, Itagüí y Belén.</b></p>
+            </div>
+        </section>    
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3 style="color:var(--primary); margin-bottom:10px;">VENGAS ®</h3>
+                <p style="color:var(--text-muted); font-size: 0.85rem;">Técnicos certificados para el diagnóstico y reparación de equipos del hogar.</p>
+                <div class="social-banner">
+                    <a href="https://www.facebook.com/profile.php?id=61580805415732" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/vengas_medellin/reels/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573238404024" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 style="margin-bottom:10px;">ATENCIÓN</h4>
+                <p style="color:var(--text-muted); font-size: 0.85rem;"><i class="fas fa-phone" style="color:var(--primary);"></i> +57 323 840 4024</p>
+                <p style="color:var(--text-muted); font-size: 0.85rem; margin-top:10px;">📍 Medellín y todo el Valle de Aburrá.</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:40px; opacity:0.3; font-size:0.7rem;">© 2026 VENGAS SERVICIOS TÉCNICOS.</div>
+    </footer>
+
+    <a href="https://wa.me/573238404024?text=Hola%20Vengas!%20Necesito%20programar%20una%20revisión%20técnica." class="btn-wa" target="_blank">
+        <div class="wa-content">
+            <span class="wa-badge-top">⭐ Calidad Certificada</span>
+            <span class="wa-main-text">PROGRAMAR VISITA AHORA</span>
+            <span class="wa-availability"><span class="pulse-dot"></span> Técnico disponible hoy</span>
+        </div>
+        <i class="fab fa-whatsapp wa-icon-glow" style="font-size: 2.2rem;"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            AOS.init({ duration: 800, once: true });
+            
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 30, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#00f2ff" },
+                    "opacity": { "value": 0.1 },
+                    "size": { "value": 2 },
+                    "move": { "enable": true, "speed": 1 }
+                }
+            });
+
+            // Lógica de Typewriter
+            const typewriter = document.getElementById('typewriter');
+            const phrases = [
+                "Reparación de Lavadoras Digitales",
+                "Mantenimiento de Calentadores Haceb",
+                "Servicio Técnico de Neveras Samsung",
+                "Instalación de Cubiertas Whirlpool"
+            ];
+            let pIndex = 0, cIndex = 0, isDeleting = false;
+
+            function typeEffect() {
+                const current = phrases[pIndex];
+                typewriter.textContent = isDeleting ? current.substring(0, cIndex--) : current.substring(0, cIndex++);
+
+                if (!isDeleting && cIndex === current.length + 1) {
+                    setTimeout(() => isDeleting = true, 2000);
+                } else if (isDeleting && cIndex === 0) {
+                    isDeleting = false;
+                    pIndex = (pIndex + 1) % phrases.length;
+                }
+                setTimeout(typeEffect, isDeleting ? 50 : 100);
+            }
+            typeEffect();
+        });
+
+        const aura = document.getElementById('cursor-aura');
+        document.addEventListener('mousemove', (e) => {
+            aura.style.left = e.clientX + 'px';
+            aura.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>

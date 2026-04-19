@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="google-site-verification" content="google471d583c7a9d3999" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#010409">
+    <title>VENGAS Medellín | Ingeniería de Soporte Técnico Superior</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* ============================================================
+           SISTEMA DE DISEÑO DE ALTO NIVEL (DESIGN SYSTEM)
+           ============================================================ */
+        :root {
+            --orange-primary: #ff8c00;
+            --orange-soft: #ffa500;
+            --orange-glow-ui: rgba(255, 140, 0, 0.45);
+            --blue-tech-ui: #00f2ff;
+            --blue-glow-ui: rgba(0, 242, 255, 0.4);
+            --dark-deep: #010409;
+            --dark-surface: #0a0f18;
+            --glass-base: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-ultra-white: #ffffff;
+            --text-gray-sub: #b0b0b0;
+            --font-main: 'Poppins', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --transition-master: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        /* RESETEO DE MOTOR DE RENDERIZADO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+            background-color: var(--dark-deep);
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--dark-deep);
+            color: var(--text-ultra-white);
+            overflow-x: hidden;
+            user-select: none; /* Evita selección accidental en móvil */
+        }
+
+        /* ============================================================
+           SISTEMA DE ANIMACIONES CUSTOM (EXPANDIDO)
+           ============================================================ */
+        @keyframes pulse-tech { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+        @keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes glitch-hover {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* UI ELEMENTS: PROGRESS & PARTICLES */
+        .progress-indicator {
+            position: fixed; top: 0; left: 0; width: 0%; height: 5px;
+            background: linear-gradient(90deg, var(--blue-tech-ui), var(--orange-primary));
+            z-index: 9999; box-shadow: 0 0 20px var(--blue-tech-ui);
+            transition: width 0.25s ease-out;
+        }
+
+        #particles-js {
+            position: fixed; width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #0d1421 0%, #010409 100%);
+        }
+
+        /* ============================================================
+           SISTEMA DE ENCABEZADO (HEADER V8.0)
+           ============================================================ */
+        .nav-system {
+            position: fixed; top: 0; width: 100%; z-index: 9000;
+            background: rgba(1, 4, 9, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--blue-glow-ui);
+            padding: 15px 45px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .status-badge {
+            display: flex; align-items: center; gap: 12px;
+            font-family: var(--font-mono); font-size: 11px; color: var(--blue-tech-ui);
+            letter-spacing: 1px;
+        }
+
+        .active-ring {
+            width: 10px; height: 10px; background: #00ff00; border-radius: 50%;
+            box-shadow: 0 0 15px #00ff00; animation: pulse-tech 1.5s infinite;
+        }
+
+        .clock-ui {
+            background: rgba(0, 242, 255, 0.08); padding: 5px 15px;
+            border: 1px solid var(--blue-tech-ui); border-radius: 5px;
+            font-weight: 700; color: #fff; text-shadow: 0 0 5px var(--blue-tech-ui);
+        }
+
+        /* ============================================================
+           HERO SECTION (DIAMOND INTERFACE)
+           ============================================================ */
+        .hero-diamond {
+            min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            padding: 150px 25px 80px; position: relative;
+        }
+
+        .portal-main {
+            position: relative; width: 280px; height: 280px;
+            margin-bottom: 50px; transition: var(--transition-master);
+        }
+
+        .logo-hq {
+            width: 100%; height: 100%; object-fit: contain;
+            border-radius: 50%; border: 4px double var(--orange-primary);
+            background: var(--dark-deep); padding: 25px;
+            box-shadow: 0 0 60px var(--orange-glow-ui);
+            z-index: 5; position: relative;
+        }
+
+        .scan-line {
+            position: absolute; width: 130%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--blue-tech-ui), transparent);
+            left: -15%; z-index: 10; animation: scanner-effect 6s ease-in-out infinite;
+        }
+
+        @keyframes scanner-effect { 0% { top: 0%; opacity: 0; } 50% { top: 100%; opacity: 1; } 100% { top: 0%; opacity: 0; } }
+
+        .title-glitch {
+            font-size: clamp(2.8rem, 11vw, 6rem); font-weight: 900;
+            line-height: 0.85; text-transform: uppercase; letter-spacing: -4px;
+            text-align: center; margin-bottom: 30px;
+            background: linear-gradient(180deg, #fff 40%, var(--blue-tech-ui));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .title-glitch span { color: var(--orange-primary); -webkit-text-fill-color: var(--orange-primary); }
+
+        /* MARCAS SLIDER (V8.0) */
+        .brands-infinity {
+            width: 100vw; background: rgba(255,255,255,0.02);
+            padding: 20px 0; border-y: 1px solid var(--glass-border);
+            overflow: hidden; margin: 40px 0;
+        }
+
+        .brands-slide {
+            display: flex; width: max-content; gap: 80px;
+            animation: move-brands 40s linear infinite;
+        }
+
+        .brand-item-ui {
+            font-size: 1.4rem; font-weight: 900; color: #555;
+            letter-spacing: 5px; transition: 0.4s;
+        }
+
+        .brand-item-ui:hover { color: var(--orange-primary); transform: scale(1.1); }
+
+        @keyframes move-brands { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        /* DATA STRIP 2.0 */
+        .data-panel {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; background: var(--dark-surface);
+            padding: 30px 50px; border-radius: 40px;
+            border: 1px solid var(--blue-tech-ui);
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
+            max-width: 1100px; width: 95%;
+        }
+
+        .data-cell {
+            display: flex; align-items: center; gap: 15px;
+            padding: 10px; border-right: 1px solid var(--glass-border);
+        }
+
+        .data-cell:last-child { border: none; }
+        .data-cell i { font-size: 1.5rem; color: var(--orange-primary); }
+        .data-cell b { display: block; color: var(--blue-tech-ui); font-size: 1.1rem; }
+        .data-cell small { font-size: 9px; color: var(--text-gray-sub); letter-spacing: 1px; text-transform: uppercase; }
+
+        /* BUTTON UI */
+        .btn-call-to-action {
+            margin-top: 60px; padding: 25px 60px;
+            background: #fff; color: #000; border-radius: 100px;
+            text-decoration: none; font-weight: 900; font-size: 1.2rem;
+            display: inline-flex; align-items: center; gap: 15px;
+            transition: var(--transition-master);
+            box-shadow: 0 20px 50px rgba(0, 242, 255, 0.3);
+            border: 3px solid transparent;
+        }
+
+        .btn-call-to-action:hover {
+            background: var(--orange-primary); color: #fff;
+            transform: translateY(-10px); box-shadow: 0 30px 60px var(--orange-glow-ui);
+        }
+
+        /* ============================================================
+           CONTENEDOR DE SECCIONES (CARDS ÉLITE)
+           ============================================================ */
+        .content-flow { max-width: 1250px; margin: 0 auto; padding: 100px 20px; }
+
+        .premium-card {
+            background: var(--dark-surface); border: 1px solid var(--glass-border);
+            border-radius: 50px; padding: 80px 60px; margin-bottom: 80px;
+            position: relative; overflow: hidden;
+            transition: var(--transition-master);
+        }
+
+        .premium-card:hover { border-color: var(--blue-tech-ui); box-shadow: 0 40px 100px rgba(0,0,0,0.8); }
+
+        .tag-number {
+            font-family: var(--font-mono); color: var(--blue-tech-ui);
+            font-size: 1.5rem; margin-bottom: 15px; display: block;
+        }
+
+        .section-header-title {
+            font-size: 2.5rem; font-weight: 900; margin-bottom: 50px;
+            border-left: 8px solid var(--orange-primary); padding-left: 30px;
+        }
+
+        /* SERVICIOS GRID (V8.0) */
+        .services-wrapper {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px;
+        }
+
+        .service-node {
+            background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);
+            padding: 45px; border-radius: 40px; transition: 0.5s;
+        }
+
+        .service-node:hover {
+            background: rgba(0, 242, 255, 0.03); border-color: var(--blue-tech-ui);
+            transform: scale(1.02);
+        }
+
+        .service-node i { font-size: 3.5rem; color: var(--orange-primary); margin-bottom: 25px; display: block; }
+        .service-node h3 { font-size: 1.8rem; color: var(--blue-tech-ui); margin-bottom: 15px; }
+        .service-node p { color: var(--text-gray-sub); line-height: 1.8; }
+
+        /* ============================================================
+           FAQ SYSTEM (SMOOTH ACCORDION)
+           ============================================================ */
+        .faq-container { margin-top: 40px; }
+        .faq-item-ui {
+            border-bottom: 1px solid var(--glass-border); padding: 35px 10px;
+            cursor: pointer; transition: 0.4s;
+        }
+
+        .faq-item-ui:hover { background: rgba(255,255,255,0.02); }
+
+        .faq-q { display: flex; justify-content: space-between; align-items: center; font-size: 1.3rem; font-weight: 700; }
+        .faq-q i { color: var(--orange-primary); transition: 0.4s; }
+
+        .faq-a {
+            max-height: 0; overflow: hidden; transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--text-gray-sub); font-size: 1.1rem; line-height: 1.9;
+        }
+
+        .faq-item-ui.active .faq-a { max-height: 300px; margin-top: 25px; }
+        .faq-item-ui.active .faq-q { color: var(--orange-primary); }
+        .faq-item-ui.active .faq-q i { transform: rotate(180deg); }
+
+        /* ============================================================
+           FOOTER EXTREME (V8.0)
+           ============================================================ */
+        .footer-ultra {
+            background: linear-gradient(to top, #000, #0a0f18);
+            border-top: 3px solid var(--blue-tech-ui);
+            padding: 120px 40px 60px;
+        }
+
+        .footer-grid-ui {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 80px;
+        }
+
+        .f-col h4 {
+            color: var(--blue-tech-ui); font-size: 1.1rem; letter-spacing: 5px;
+            text-transform: uppercase; margin-bottom: 40px;
+        }
+
+        .f-col p { color: var(--text-gray-sub); margin-bottom: 30px; line-height: 2; }
+
+        .social-row { display: flex; gap: 20px; }
+        .social-link-ui {
+            width: 55px; height: 55px; border: 1px solid var(--blue-tech-ui);
+            border-radius: 15px; display: flex; justify-content: center; align-items: center;
+            color: #fff; font-size: 1.5rem; transition: 0.4s; text-decoration: none;
+        }
+
+        .social-link-ui:hover {
+            background: var(--blue-tech-ui); color: #000;
+            box-shadow: 0 0 30px var(--blue-tech-ui); transform: translateY(-5px);
+        }
+
+        .contact-li { list-style: none; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; color: #fff; }
+        .contact-li i { color: var(--orange-primary); font-size: 1.2rem; }
+
+        /* ============================================================
+           WHATSAPP SYSTEM (FLOATING V8.0)
+           ============================================================ */
+        .whatsapp-fixed { position: fixed; bottom: 50px; right: 50px; z-index: 9999; }
+        .wa-btn-ui {
+            width: 85px; height: 85px; background: #25D366; border-radius: 25px;
+            display: flex; justify-content: center; align-items: center;
+            color: #fff; font-size: 45px; text-decoration: none;
+            box-shadow: 0 20px 50px rgba(37,211,102,0.4); transition: 0.5s;
+        }
+
+        .wa-btn-ui:hover { transform: scale(1.1) rotate(5deg); }
+
+        .wa-online-tag {
+            position: absolute; top: -15px; left: -20px; background: #fff; color: #000;
+            padding: 8px 18px; border-radius: 50px; font-weight: 900; font-size: 10px;
+            border: 2px solid #25D366; white-space: nowrap; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* ============================================================
+           RESPONSIVE REFINAMIENTO (MAX LÍNEAS)
+           ============================================================ */
+        @media (max-width: 992px) {
+            .nav-system { padding: 15px 25px; }
+            .digital-clock { display: none; }
+            .premium-card { padding: 60px 30px; border-radius: 35px; }
+            .section-header-title { font-size: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-diamond { padding-top: 120px; }
+            .portal-main { width: 200px; height: 200px; }
+            .data-panel { border-radius: 30px; padding: 30px 20px; }
+            .data-cell { width: 100%; border-right: none; border-bottom: 1px solid var(--glass-border); justify-content: center; }
+            .data-cell:last-child { border-bottom: none; }
+            .title-glitch { font-size: 3.2rem; letter-spacing: -2px; }
+            .btn-call-to-action { width: 100%; justify-content: center; font-size: 1rem; }
+            .whatsapp-fixed { bottom: 30px; right: 30px; }
+            .wa-btn-ui { width: 70px; height: 70px; font-size: 35px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-indicator" id="scrollBar"></div>
+
+    <div id="particles-js"></div>
+
+    <nav class="nav-system">
+        <div class="status-badge">
+            <div class="active-ring"></div>
+            <span>SYSTEM_STATUS: <span style="color:var(--orange-primary)">ONLINE</span> // v8.0_REFINED</span>
+        </div>
+        <div class="clock-ui" id="digitalClock">00:00:00</div>
+        <div style="font-weight: 900; letter-spacing: 3px; font-size: 12px; opacity: 0.8;">VENGAS_ANTIOQUIA</div>
+    </nav>
+
+    <section class="hero-diamond">
+        <div class="portal-main" data-aos="zoom-in" id="interactPortal">
+            <div class="scan-line"></div>
+            <img src="logo.png" alt="VENGAS TÉCNICO" class="logo-hq">
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="300" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <h1 class="title-glitch">INGENIERÍA<span> TÉCNICA</span><br>DE SOPORTE ÉLITE</h1>
+            
+            <div class="brands-infinity">
+                <div class="brands-slide">
+                    <div class="brand-item-ui">SAMSUNG</div><div class="brand-item-ui">LG</div>
+                    <div class="brand-item-ui">WHIRLPOOL</div><div class="brand-item-ui">HACEB</div>
+                    <div class="brand-item-ui">MABE</div><div class="brand-item-ui">BOSCH</div>
+                    <div class="brand-item-ui">CHALLENGER</div><div class="brand-item-ui">KITCHENAID</div>
+                    <div class="brand-item-ui">SAMSUNG</div><div class="brand-item-ui">LG</div>
+                    <div class="brand-item-ui">WHIRLPOOL</div><div class="brand-item-ui">HACEB</div>
+                </div>
+            </div>
+
+            <div class="data-panel">
+                <div class="data-cell"><i class="fas fa-microchip"></i><div><b>TÉCNICOS SENIOR</b><small>Core Expertise</small></div></div>
+                <div class="data-cell"><i class="fas fa-bolt"></i><div><b>RESPUESTA INMEDIATA</b><small>Atención Hoy</small></div></div>
+                <div class="data-cell"><i class="fas fa-shield-halved"></i><div><b>120 DÍAS GARANTÍA</b><small>Protocolo Seguro</small></div></div>
+                <div class="data-cell"><i class="fas fa-certificate"></i><div><b>PARTES ORIGINALES</b><small>Repuestos Élite</small></div></div>
+            </div>
+
+            <a href="https://wa.me/573238404024" class="btn-call-to-action">
+                <i class="fab fa-whatsapp"></i> INICIAR ORDEN DE SERVICIO
+            </a>
+        </div>
+    </section>
+
+    <main class="content-flow">
+
+        <section class="premium-card" data-aos="fade-up">
+            <span class="tag-number">CMD_SERVICE_PROTOCOL_01</span>
+            <h2 class="section-header-title">PROTOCOLOS DE INTERVENCIÓN</h2>
+            <div class="services-wrapper">
+                <article class="service-node">
+                    <i class="fas fa-robot"></i>
+                    <h3>Sistemas de Lavado</h3>
+                    <p>Reconstrucción técnica de transmisiones, calibración de placas lógicas e integración de sensores industriales.</p>
+                </article>
+                <article class="service-node">
+                    <i class="fas fa-temperature-arrow-down"></i>
+                    <h3>Gestión Térmica</h3>
+                    <p>Optimización de sistemas de refrigeración Inverter, sellado de fugas por vacío y recarga de refrigerante ecológico.</p>
+                </article>
+                <article class="service-node">
+                    <i class="fas fa-fire-burner"></i>
+                    <h3>Ingeniería de Gas</h3>
+                    <p>Soporte correctivo y preventivo para calentadores de paso y estufas industriales bajo norma técnica NTC.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="premium-card" data-aos="fade-right">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center;">
+                <div>
+                    <span class="tag-number">QA_QUALITY_STANDARDS_02</span>
+                    <h2 class="section-header-title">ESTÁNDARES DE ÉLITE</h2>
+                    <ul style="list-style: none;">
+                        <li class="contact-li"><i class="fas fa-square-check"></i> Garantía escrita legal por 120 días.</li>
+                        <li class="contact-li"><i class="fas fa-square-check"></i> Técnicos vinculados con seguridad social.</li>
+                        <li class="contact-li"><i class="fas fa-square-check"></i> Repuestos 100% genuinos certificados.</li>
+                        <li class="contact-li"><i class="fas fa-square-check"></i> Trazabilidad de servicio post-venta.</li>
+                    </ul>
+                </div>
+                <div style="text-align: center; background: rgba(0,242,255,0.05); padding: 60px; border-radius: 40px; border: 1px solid var(--blue-tech-ui);">
+                    <div style="font-size: 5.5rem; font-weight: 900; color: var(--blue-tech-ui); line-height: 1;">4.9</div>
+                    <div style="color: gold; font-size: 1.8rem; margin: 20px 0;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p style="font-size: 11px; letter-spacing: 3px; opacity: 0.6; text-transform: uppercase;">Customer Satisfaction Index</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="premium-card" data-aos="fade-up">
+            <span class="tag-number">CMD_SYSTEM_QUERY_03</span>
+            <h2 class="section-header-title">CONSULTAS FRECUENTES</h2>
+            <div class="faq-container">
+                <div class="faq-item-ui" onclick="toggleAccordion(this)">
+                    <div class="faq-q">¿Disponibilidad en municipios aledaños? <i class="fas fa-plus"></i></div>
+                    <div class="faq-a">Cobertura total certificada en Medellín, Envigado, Sabaneta, Itagüí, La Estrella, Bello, Copacabana y el Oriente Antioqueño.</div>
+                </div>
+                <div class="faq-item-ui" onclick="toggleAccordion(this)">
+                    <div class="faq-q">¿Cómo se liquida el diagnóstico especializado? <i class="fas fa-plus"></i></div>
+                    <div class="faq-a">La revisión tiene un costo base de $30.000 COP. Si el cliente autoriza la reparación, este valor se abona automáticamente al costo total del trabajo.</div>
+                </div>
+                <div class="faq-item-ui" onclick="toggleAccordion(this)">
+                    <div class="faq-q">¿Cuál es el tiempo de respuesta promedio? <i class="fas fa-plus"></i></div>
+                    <div class="faq-a">Garantizamos la asignación de un ingeniero de soporte en un lapso no mayor a 4 horas desde la apertura del ticket por WhatsApp.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-ultra">
+        <div class="footer-grid-ui">
+            <div class="f-col">
+                <h4>VENGAS MEDELLÍN</h4>
+                <p>Centro de ingeniería aplicada al soporte técnico domiciliario. Lideramos la reparación de tecnología hogar con precisión milimétrica y respaldo corporativo.</p>
+                <div class="social-row">
+                    <a href="https://www.facebook.com/people/Vengas-Servicio-T%C3%A9cnico-Gas-y-Electrodom%C3%A9sticos/61580805415732/" class="social-link-ui" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/vengas_medellin/" class="social-link-ui" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573238404024" class="social-link-ui" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="f-col">
+                <h4>CENTRAL_CONTACT</h4>
+                <ul>
+                    <li class="contact-li"><i class="fas fa-phone-square"></i> +57 323 840 4024</li>
+                    <li class="contact-li"><i class="fas fa-envelope-open-text"></i> vengas.medellin@gmail.com</li>
+                    <li class="contact-li"><i class="fas fa-map-location-dot"></i> Antioquia, Colombia</li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h4>WORKING_CYCLES</h4>
+                <ul>
+                    <li class="contact-li"><i class="fas fa-clock"></i> LUN - VIE: 08:00 - 18:00</li>
+                    <li class="contact-li"><i class="fas fa-clock"></i> SAB: 08:00 - 16:00</li>
+                    <li class="contact-li"><i class="fas fa-shield-heart"></i> Emergencias: 24h WhatsApp</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 100px; padding-top: 30px; border-top: 1px solid var(--glass-border); font-size: 10px; opacity: 0.4; letter-spacing: 2px;">
+            VENGAS MEDELLÍN © 2026 // HIGH_TECH_INFRASTRUCTURE // ANTIOQUIA_HQ
+        </div>
+    </footer>
+
+    <div class="whatsapp-fixed">
+        <a href="https://wa.me/573238404024" class="wa-btn-ui">
+            <div class="wa-online-tag">INGENIEROS DISPONIBLES</div>
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // INICIALIZACIÓN DE MOTOR AOS
+        AOS.init({ duration: 1200, once: false, easing: 'ease-out-back' });
+
+        // CONFIGURACIÓN DE PARTÍCULAS V8.0
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 90, "density": { "enable": true, "value_area": 1000 } },
+                "color": { "value": ["#00f2ff", "#ff8c00"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.25, "random": true },
+                "size": { "value": 2, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#00f2ff", "opacity": 0.1, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "out_mode": "out" }
+            },
+            "interactivity": {
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
+            }
+        });
+
+        // RELOJ DIGITAL DE PRECISIÓN
+        function runClock() {
+            const el = document.getElementById('digitalClock');
+            const update = () => {
+                const now = new Date();
+                el.innerText = now.toLocaleTimeString('es-CO', { hour12: false, timeZone: 'America/Bogota' });
+            };
+            setInterval(update, 1000); update();
+        }
+        runClock();
+
+        // CONTROLADOR DE ACORDEÓN FAQ
+        function toggleAccordion(el) {
+            const isActive = el.classList.contains('active');
+            document.querySelectorAll('.faq-item-ui').forEach(item => item.classList.remove('active'));
+            if (!isActive) el.classList.add('active');
+        }
+
+        // CONTROLADOR DE SCROLL PROGRESS
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollBar").style.width = scrolled + "%";
+        };
+
+        // INTERACCIÓN PARALLAX LOGO
+        document.addEventListener('mousemove', (e) => {
+            if(window.innerWidth > 1024) {
+                const portal = document.getElementById('interactPortal');
+                const x = (window.innerWidth / 2 - e.pageX) / 35;
+                const y = (window.innerHeight / 2 - e.pageY) / 35;
+                portal.style.transform = `rotateX(${-y}deg) rotateY(${x}deg) scale(1.05)`;
+            }
+        });
+    </script>
+</body>
+</html>
