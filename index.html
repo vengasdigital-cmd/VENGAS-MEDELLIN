@@ -124,7 +124,7 @@
 
         /* --- Base --- */
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        body { background: radial-gradient(circle at top, rgba(0,242,255,0.10), transparent 22%), linear-gradient(180deg, #020617 0%, #060912 100%); color: #f1f5f9; font-family: 'Outfit', sans-serif; overflow-x: hidden; line-height: 1.6; }
+        body { background: radial-gradient(circle at top, rgba(0,242,255,0.10), transparent 22%), linear-gradient(180deg, #020617 0%, #060912 100%); color: #f1f5f9; font-family: 'Outfit', sans-serif; overflow-x: hidden; line-height: 1.6; scroll-behavior: smooth; scroll-behavior: smooth; }
         .skip-link { position: absolute; top: -60px; left: 16px; background: rgba(0,0,0,0.88); color: #fff; padding: 12px 18px; border-radius: 12px; z-index: 2000; text-decoration: none; transition: top 0.25s ease; }
         .skip-link:focus { top: 16px; }
         @media (prefers-reduced-motion: reduce) {
@@ -161,7 +161,7 @@
         .container { max-width: 1240px; margin: 0 auto; padding: 220px 6% 60px; position: relative; z-index: 1; }
         .hero { min-height: 68vh; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
         .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(0,242,255,0.15), transparent 24%), radial-gradient(circle at 95% 20%, rgba(255,159,67,0.12), transparent 22%); pointer-events: none; }
-        .hero h1 { font-size: clamp(3rem, 8vw, 5.2rem); font-weight: 900; line-height: 0.95; margin-bottom: 20px; text-transform: uppercase; position: relative; animation: glitch 2s infinite; }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5.2rem); font-weight: 900; line-height: 0.95; margin-bottom: 20px; text-transform: uppercase; position: relative; animation: glitch 2s infinite; text-shadow: 0 20px 60px rgba(0, 0, 0, 0.25); }
         .hero-subtitle { font-size: 1rem; color: var(--text-muted); max-width: 700px; margin-top: 10px; }
         .hero-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-top: 24px; }
         .metric-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 22px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
@@ -239,12 +239,13 @@
         /* Marcas Slider */
         .brands-slider { background: rgba(0,0,0,0.3); padding: 30px 0; overflow: hidden; margin: 40px 0; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
         .brands-track { display: flex; width: calc(200px * 14); animation: scrollBrands 25s linear infinite; }
-        .brand-item { width: 200px; text-align: center; color: #fff; font-weight: 900; font-size: 1.2rem; opacity: 0.4; letter-spacing: 2px; }
+        .brand-item { width: 200px; text-align: center; color: #fff; font-weight: 900; font-size: 1.2rem; opacity: 0.45; letter-spacing: 2px; padding: 18px 0; border-radius: 18px; background: rgba(255,255,255,0.04); box-shadow: inset 0 0 15px rgba(255,255,255,0.08); }
         @keyframes scrollBrands { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-200px * 7)); } }
 
         /* Titles */
-        .section-title { text-align: center; margin: 80px 0 40px; }
-        .section-title h2 { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; position: relative; animation: textExpand 2s ease-in-out infinite alternate; }
+        .section-title { text-align: center; margin: 80px 0 40px; position: relative; }
+        .section-title::after { content: ""; position: absolute; left: 50%; bottom: -10px; width: 120px; height: 4px; background: linear-gradient(90deg, #00f2ff, #4d7cff); border-radius: 999px; transform: translateX(-50%); }
+        .section-title h2 { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; position: relative; animation: textExpand 2s ease-in-out infinite alternate; background: linear-gradient(90deg, #00f2ff, #4d7cff, #ff9f43); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         .persuasive-banner {
             position: relative;
@@ -313,6 +314,17 @@
 
         .service-highlight { font-size: 0.95rem; color: #e2e8f0; margin: 10px 0 18px; }
         .service-card-note { color: rgba(242,242,242,0.76); font-size: 0.92rem; margin-bottom: 14px; }
+
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 30px; }
+        .tech-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 28px 24px; min-height: 220px; display: flex; flex-direction: column; gap: 16px; transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; }
+        .tech-card:hover { transform: translateY(-6px); border-color: rgba(0,242,255,0.35); box-shadow: 0 24px 60px rgba(0,242,255,0.12); }
+        .tech-card-icon { width: 55px; height: 55px; display: grid; place-items: center; border-radius: 18px; background: rgba(0,242,255,0.12); color: var(--accent); font-size: 1.4rem; }
+        .tech-card h3 { margin: 0; font-size: 1.1rem; }
+        .tech-card p { margin: 0; color: #d8e0f0; line-height: 1.75; font-size: 0.95rem; }
+
+        .back-to-top { position: fixed; right: 18px; bottom: 18px; width: 50px; height: 50px; border-radius: 50%; background: rgba(0,242,255,0.16); border: 1px solid rgba(255,255,255,0.12); color: #fff; display: grid; place-items: center; text-decoration: none; box-shadow: 0 16px 40px rgba(0,242,255,0.15); opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; z-index: 2000; }
+        .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: rgba(0,242,255,0.24); transform: translateY(-2px); }
 
         .coverage-grid { display: grid; gap: 20px; grid-template-columns: 1.2fr .8fr; margin-top: 40px; }
         .coverage-info { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; padding: 28px; }
@@ -764,7 +776,7 @@
 
     <header class="page-header">
         <div class="topbar">
-            <p><strong>Atención técnica inmediata en Medellín</strong> · Visita técnica en 24 horas · Garantía de 4 meses</p>
+            <p><strong>Atención técnica premium en Medellín</strong> · Respuesta exprés · Garantía certificada por 4 meses</p>
             <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Necesito%20un%20servicio%20técnico%20profesional" class="topbar-action" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp directo</a>
         </div>
 
@@ -792,7 +804,7 @@
                 <span class="hero-pill"><i class="fas fa-map-marker-alt"></i> Cobertura Valle de Aburrá</span>
             </div>
             <h1>VENGAS MEDELLÍN <br><span class="grad" id="typed-text"></span></h1>
-            <p class="hero-subtitle">Servicio técnico urgente para lavadoras, neveras, calentadores y gasodomésticos en Medellín. Técnicos expertos, atención exprés y garantía certificada.</p>
+            <p class="hero-subtitle">Servicio técnico premium en Medellín y Valle de Aburrá. Atención VIP, diagnósticos precisos y garantía certificada para equipos de alto rendimiento.</p>
             <div class="badge-grid">
                 <span class="badge"><i class="fas fa-shield-alt"></i> GARANTÍA 4 MESES</span>
                 <span class="badge"><i class="fas fa-bolt"></i> ATENCIÓN 24H</span>
@@ -818,6 +830,33 @@
                 <li>Visita técnica programada en menos de 24 horas.</li>
                 <li>Garantía de hasta 4 meses en mano de obra y repuestos.</li>
             </ul>
+        </section>
+
+        <section class="section-title" data-aos="fade-up">
+            <h2>Tecnología y Confianza</h2>
+            <div class="accent-bar"></div>
+            <div class="tech-grid">
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tech-card-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Diagnóstico digital</h3>
+                    <p>Usamos técnicas de inspección digital y medición precisa para identificar fallas de forma rápida y confiable.</p>
+                </div>
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tech-card-icon"><i class="fas fa-whatsapp"></i></div>
+                    <h3>Reserva instantánea</h3>
+                    <p>Agenda tu visita por WhatsApp en segundos y recibe confirmación inmediata con seguimiento personalizado.</p>
+                </div>
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tech-card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>Control transparente</h3>
+                    <p>Presupuestos claros, informes técnicos y garantía digital para que siempre sepas qué haces y por qué.</p>
+                </div>
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="tech-card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Seguridad certificada</h3>
+                    <p>Instalaciones y reparaciones realizadas según normas, con foco en la seguridad de tu familia y tus electrodomésticos.</p>
+                </div>
+            </div>
         </section>
 
         <div class="brands-slider" data-aos="fade-in">
@@ -1030,8 +1069,9 @@
             </div>
             <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Quiero%20agendar%20mi%20cita%20hoy%20para%20servicio%20t%C3%A9cnico" class="contact-btn" target="_blank" rel="noopener noreferrer">Agenda tu cita hoy</a>
         </div>
+        <a class="back-to-top" href="#main-content" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></a>
     </main>
-<footer id="contacto" data-aos="fade-up">
+    <footer id="contacto" data-aos="fade-up">
         <div class="footer-grid">
             <div>
                 <h3 style="color:var(--primary); margin-bottom:10px;">VENGAS ®</h3>
@@ -1071,19 +1111,19 @@
         // Carga optimizada: primero el contenido, luego los efectos
         window.addEventListener('load', () => {
             AOS.init({ duration: 800, once: true });
-            
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": { "value": 30, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": "#00f2ff" },
-                    "opacity": { "value": 0.1 },
-                    "size": { "value": 2 },
-                    "line_linked": { "enable": true, "distance": 150, "color": "#00f2ff", "opacity": 0.05, "width": 1 },
-                    "move": { "enable": true, "speed": 1 }
+
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 30, density: { enable: true, value_area: 800 } },
+                    color: { value: '#00f2ff' },
+                    opacity: { value: 0.1 },
+                    size: { value: 2 },
+                    line_linked: { enable: true, distance: 150, color: '#00f2ff', opacity: 0.05, width: 1 },
+                    move: { enable: true, speed: 1 }
                 }
             });
 
-            // Confetti brutal al cargar
+            // Confetti de bienvenida
             setTimeout(() => {
                 confetti({
                     particleCount: 100,
@@ -1097,7 +1137,7 @@
             const counters = document.querySelectorAll('.metric-card strong');
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-target');
-                const increment = target / 100;
+                const increment = Math.max(target / 100, 1);
                 let current = 0;
                 const timer = setInterval(() => {
                     current += increment;
@@ -1111,31 +1151,43 @@
             });
         });
 
-        // Lógica de FAQ
-        document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', () => {
-                const parent = item.parentElement;
-                parent.classList.toggle('active');
-            });
+        // Botón volver arriba y parallax
+        const backToTop = document.querySelector('.back-to-top');
+        const particlesLayer = document.getElementById('particles-js');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            if (particlesLayer) {
+                particlesLayer.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+            if (backToTop) {
+                if (scrolled > 400) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            }
         });
 
         // Aura del cursor
         const aura = document.getElementById('cursor-aura');
-        document.addEventListener('mousemove', (e) => {
-            aura.style.left = e.clientX + 'px';
-            aura.style.top = e.clientY + 'px';
-        });
+        if (aura) {
+            document.addEventListener('mousemove', (e) => {
+                aura.style.left = e.clientX + 'px';
+                aura.style.top = e.clientY + 'px';
+            });
+        }
 
         // Efecto de frases rotativas suaves
         const typedText = document.getElementById('typed-text');
         const typedPhrases = [
-            "Técnicos expertos en tu hogar",
-            "Servicio urgente en 24h",
-            "Garantía técnica que respalda tu equipo"
+            'Atención VIP para tu hogar',
+            'Diagnóstico exprés con técnica profesional',
+            'Reparación premium con garantía certificada'
         ];
         let phraseIndex = 0;
 
         function showPhrase() {
+            if (!typedText) return;
             typedText.classList.remove('visible');
             setTimeout(() => {
                 typedText.textContent = typedPhrases[phraseIndex];
@@ -1147,11 +1199,10 @@
         showPhrase();
         setInterval(showPhrase, 4200);
 
-        // Parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const particles = document.getElementById('particles-js');
-            particles.style.transform = `translateY(${scrolled * 0.5}px)`;
+        // FAQ interactivo
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => item.classList.toggle('active'));
         });
     </script>
 </body>
