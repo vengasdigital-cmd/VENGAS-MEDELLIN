@@ -76,7 +76,7 @@ if (!isMobile()) {
     }
 }
 
-// Efecto de frases rotativas suaves
+// Efecto de frases rotativas suaves (solo en desktop)
 const typedText = document.getElementById('typed-text');
 const typedPhrases = [
     'Atención VIP para tu hogar',
@@ -86,7 +86,7 @@ const typedPhrases = [
 let phraseIndex = 0;
 
 function showPhrase() {
-    if (!typedText) return;
+    if (!typedText || isMobile()) return;
     typedText.classList.remove('visible');
     setTimeout(() => {
         typedText.textContent = typedPhrases[phraseIndex];
@@ -95,8 +95,16 @@ function showPhrase() {
     }, 250);
 }
 
-showPhrase();
-setInterval(showPhrase, 4200);
+if (!isMobile()) {
+    showPhrase();
+    setInterval(showPhrase, 4200);
+} else {
+    // En móviles, mostrar texto estático
+    if (typedText) {
+        typedText.textContent = 'Servicio Técnico Premium';
+        typedText.classList.add('visible');
+    }
+}
 
 // FAQ interactivo
 const faqItems = document.querySelectorAll('.faq-item');
