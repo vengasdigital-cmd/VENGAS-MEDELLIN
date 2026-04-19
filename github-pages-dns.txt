@@ -1,0 +1,18 @@
+GitHub Pages DNS para vengasmedellin.tk
+
+Para que GitHub Pages sirva tu dominio personalizado, debes crear estos registros A en el panel DNS de tu proveedor de dominio:
+
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+
+Además:
+- Asegúrate de que tu dominio principal (vengasmedellin.tk) apunte a GitHub Pages.
+- No uses CNAME en los registros A, solo apunta el dominio raíz a las direcciones IP anteriores.
+- El archivo CNAME ya está configurado en el repositorio con:
+  vengasmedellin.tk
+
+Después de actualizar el DNS, la propagación puede tardar unos minutos hasta varias horas.
+
+Si usas un panel de Freenom, busca "Manage Domain" -> "Management Tools" -> "Nameservers" o "URL Forwarding" y selecciona editar los registros DNS. Luego agrega los registros A arriba.
