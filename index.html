@@ -765,6 +765,29 @@
             .social-banner { justify-content: center; }
             .hero-metrics { grid-template-columns: 1fr; }
             .metric-card { padding: 16px 18px; }
+            /* Deshabilitar animaciones pesadas en móviles */
+            #particles-js, #cursor-aura { display: none; }
+            .hero h1 { animation: none; }
+            .badge { animation: none; }
+            .hero-button { animation: none; }
+            .logo-box { animation: none; }
+            .section-title h2 { animation: none; }
+            .persuasive-banner { animation: none; }
+            .persuasive-banner i { animation: none; }
+            .brands-track { animation: none; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 0.9rem; }
+            .hero-button, .hero-secondary { padding: 14px 20px; font-size: 0.9rem; }
+            .nav-btn { padding: 10px 18px; font-size: 0.9rem; }
+            .topbar { padding: 8px 4%; font-size: 0.8rem; }
+            nav { padding: 12px 4%; }
+            .container { padding: 200px 4% 40px; }
+            .section-title { margin: 60px 0 30px; }
+            .section-title h2 { font-size: 1.8rem; }
+            .hero-details { padding: 24px; }
+            .hero-details h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -1108,30 +1131,37 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
     <script>
+        // Función para detectar si es móvil
+        function isMobile() {
+            return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
         // Carga optimizada: primero el contenido, luego los efectos
         window.addEventListener('load', () => {
             AOS.init({ duration: 800, once: true });
 
-            particlesJS('particles-js', {
-                particles: {
-                    number: { value: 30, density: { enable: true, value_area: 800 } },
-                    color: { value: '#00f2ff' },
-                    opacity: { value: 0.1 },
-                    size: { value: 2 },
-                    line_linked: { enable: true, distance: 150, color: '#00f2ff', opacity: 0.05, width: 1 },
-                    move: { enable: true, speed: 1 }
-                }
-            });
-
-            // Confetti de bienvenida
-            setTimeout(() => {
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 },
-                    colors: ['#00f2ff', '#4d7cff', '#ff9f43', '#ffffff']
+            if (!isMobile()) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 30, density: { enable: true, value_area: 800 } },
+                        color: { value: '#00f2ff' },
+                        opacity: { value: 0.1 },
+                        size: { value: 2 },
+                        line_linked: { enable: true, distance: 150, color: '#00f2ff', opacity: 0.05, width: 1 },
+                        move: { enable: true, speed: 1 }
+                    }
                 });
-            }, 2000);
+
+                // Confetti de bienvenida
+                setTimeout(() => {
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#00f2ff', '#4d7cff', '#ff9f43', '#ffffff']
+                    });
+                }, 2000);
+            }
 
             // Contador animado
             const counters = document.querySelectorAll('.metric-card strong');
@@ -1151,12 +1181,12 @@
             });
         });
 
-        // Botón volver arriba y parallax
+        // Botón volver arriba y parallax (solo en desktop)
         const backToTop = document.querySelector('.back-to-top');
         const particlesLayer = document.getElementById('particles-js');
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            if (particlesLayer) {
+            if (!isMobile() && particlesLayer) {
                 particlesLayer.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
             if (backToTop) {
@@ -1168,13 +1198,15 @@
             }
         });
 
-        // Aura del cursor
-        const aura = document.getElementById('cursor-aura');
-        if (aura) {
-            document.addEventListener('mousemove', (e) => {
-                aura.style.left = e.clientX + 'px';
-                aura.style.top = e.clientY + 'px';
-            });
+        // Aura del cursor (solo en desktop)
+        if (!isMobile()) {
+            const aura = document.getElementById('cursor-aura');
+            if (aura) {
+                document.addEventListener('mousemove', (e) => {
+                    aura.style.left = e.clientX + 'px';
+                    aura.style.top = e.clientY + 'px';
+                });
+            }
         }
 
         // Efecto de frases rotativas suaves
