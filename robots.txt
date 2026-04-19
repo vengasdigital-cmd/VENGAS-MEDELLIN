@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/sitemap.xml

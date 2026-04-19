@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="shortcut icon" href="logo.png" type="image/png">
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="apple-touch-icon" href="logo.png">
@@ -17,24 +25,24 @@
     <meta name="keywords" content="ingeniería soporte técnico Medellín, servicio técnico domiciliar Medellín, reparación lavadoras, reparación neveras, calentadores, gasodomésticos, garantía 4 meses, técnico en Medellín">
     <meta name="author" content="VENGAS Medellín">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://vengasmedellin.tk/">
+    <link rel="canonical" href="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/">
 
     <meta property="og:locale" content="es_CO">
     <meta property="og:site_name" content="VENGAS Medellín">
     <meta property="og:title" content="VENGAS Medellín | Ingeniería de Soporte Técnico Superior en Medellín">
     <meta property="og:description" content="Servicio técnico domiciliar de ingeniería en el Valle de Aburrá para lavadoras, neveras, calentadores y gasodomésticos. Garantía certificada de 4 meses y atención exprés por WhatsApp.">
-    <meta property="og:image" content="https://vengasmedellin.tk/logo.png">
+    <meta property="og:image" content="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/logo.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Logo VENGAS Medellín">
-    <meta property="og:url" content="https://vengasmedellin.tk/">
+    <meta property="og:url" content="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="VENGAS Medellín | Ingeniería de Soporte Técnico Superior">
     <meta name="twitter:description" content="Servicio técnico domiciliar urgente en Medellín para lavadoras, neveras, calentadores y gasodomésticos. Garantía certificada de 4 meses y atención exprés.">
-    <meta name="twitter:image" content="https://vengasmedellin.tk/logo.png">
+    <meta name="twitter:image" content="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/logo.png">
     <meta name="twitter:image:alt" content="Logo VENGAS Medellín">
     <meta name="twitter:site" content="@vengas_medellin">
 
@@ -48,9 +56,9 @@
       "@context": "https://schema.org",
       "@type": "HomeAndConstructionBusiness",
       "name": "VENGAS Medellín",
-      "image": "https://vengasmedellin.tk/logo.png",
-      "@id": "https://vengasmedellin.tk/",
-      "url": "https://vengasmedellin.tk/",
+      "image": "https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/logo.png",
+      "@id": "https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/",
+      "url": "https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/",
       "telephone": "+573238404024",
       "address": {
         "@type": "PostalAddress",
@@ -117,6 +125,11 @@
         /* --- Base --- */
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
         body { background: radial-gradient(circle at top, rgba(0,242,255,0.10), transparent 22%), linear-gradient(180deg, #020617 0%, #060912 100%); color: #f1f5f9; font-family: 'Outfit', sans-serif; overflow-x: hidden; line-height: 1.6; }
+        .skip-link { position: absolute; top: -60px; left: 16px; background: rgba(0,0,0,0.88); color: #fff; padding: 12px 18px; border-radius: 12px; z-index: 2000; text-decoration: none; transition: top 0.25s ease; }
+        .skip-link:focus { top: 16px; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+        }
         #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
         #cursor-aura { position: fixed; width: 450px; height: 450px; background: radial-gradient(circle, rgba(0, 242, 255, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; transform: translate(-50%, -50%); transition: all 0.3s ease; }
 
@@ -744,6 +757,7 @@
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
 
     <div id="particles-js"></div>
     <div id="cursor-aura"></div>
@@ -756,7 +770,7 @@
 
         <nav aria-label="Menú principal">
             <div class="nav-brand">
-                <div class="logo-box"><img src="logo.png" alt="Logotipo de VENGAS Medellín" width="52" height="52"></div>
+                <div class="logo-box"><img src="logo.png" alt="Logotipo de VENGAS Medellín" width="52" height="52" loading="lazy" decoding="async"></div>
                 <div class="nav-title"><span>VENGAS</span><small>Soporte técnico profesional</small></div>
             </div>
             <div class="nav-links">
@@ -769,7 +783,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
     <div class="container">
         <header class="hero" data-aos="fade-up">
             <div class="hero-topline">
