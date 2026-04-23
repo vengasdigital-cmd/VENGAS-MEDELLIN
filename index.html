@@ -1,463 +1,1550 @@
-   <!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap" as="style">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-    <link rel="dns-prefetch" href="https://unpkg.com">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="shortcut icon" href="logo.webp" type="image/webp">
-    <link rel="icon" href="logo.webp" type="image/webp">
-    <link rel="apple-touch-icon" href="logo.webp">
-    <link rel="preload" href="logo.webp" as="image" type="image/webp">
-    <meta name="theme-color" content="#020617">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="msapplication-TileColor" content="#020617">
-    <meta name="msapplication-TileImage" content="logo.webp">
-
-    <title>VENGAS Medellín | Ingeniería de Soporte Técnico Superior en el Valle de Aburrá</title>
-    <meta name="description" content="Ingeniería de soporte técnico domiciliar en Medellín, Envigado, Sabaneta e Itagüí. Reparación urgente de lavadoras, neveras, calentadores y gasodomésticos con garantía certificada de 4 meses.">
-    <meta name="keywords" content="ingeniería soporte técnico Medellín, servicio técnico domiciliar Medellín, reparación lavadoras, reparación neveras, calentadores, gasodomésticos, garantía 4 meses, técnico en Medellín">
+    <title>VENGAS Medellín | Servicio Técnico Urgente - Calentadores, Lavadoras, Neveras</title>
+    <meta name="description" content="VENGAS Medellín - Servicio técnico profesional para calentadores, lavadoras, neveras y gasodomésticos en Medellín y Valle de Aburrá. Visita en 24h con 4 meses de garantía.">
+    <meta name="keywords" content="VENGAS, Medellín, servicio técnico, calentadores, lavadoras, neveras, gasodomésticos, Valle de Aburrá, reparación, técnico">
     <meta name="author" content="VENGAS Medellín">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/">
-
-    <meta property="og:locale" content="es_CO">
-    <meta property="og:site_name" content="VENGAS Medellín">
-    <meta property="og:title" content="VENGAS Medellín | Ingeniería de Soporte Técnico Superior en Medellín">
-    <meta property="og:description" content="Servicio técnico domiciliar de ingeniería en el Valle de Aburrá para lavadoras, neveras, calentadores y gasodomésticos. Garantía certificada de 4 meses y atención exprés por WhatsApp.">
-    <meta property="og:image" content="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/logo.webp">
-    <meta property="og:image:type" content="image/webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Logo VENGAS Medellín">
-    <meta property="og:url" content="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/">
+    
+    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-
+    <meta property="og:url" content="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/">
+    <meta property="og:title" content="VENGAS Medellín | Servicio Técnico Urgente">
+    <meta property="og:description" content="Servicio técnico profesional para calentadores, lavadoras, neveras y gasodomésticos. Visita en 24h con 4 meses de garantía.">
+    <meta property="og:image" content="https://image.qwenlm.ai/public_source/01afd6ca-f8a8-4e27-9b56-6db79b238c0b/16751779b-85c6-4242-b76b-c8f555e3a542.png">
+    <meta property="og:locale" content="es_CO">
+    
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VENGAS Medellín | Ingeniería de Soporte Técnico Superior">
-    <meta name="twitter:description" content="Servicio técnico domiciliar urgente en Medellín para lavadoras, neveras, calentadores y gasodomésticos. Garantía certificada de 4 meses y atención exprés.">
-    <meta name="twitter:image" content="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/logo.webp">
-    <meta name="twitter:image:alt" content="Logo VENGAS Medellín">
-    <meta name="twitter:site" content="@vengas_medellin">
-
-    <meta name="geo.region" content="CO-ANT">
-    <meta name="geo.placename" content="Medellín">
-    <meta name="geo.position" content="6.244203;-75.581211">
-    <meta name="ICBM" content="6.244203, -75.581211">
-
+    <meta name="twitter:title" content="VENGAS Medellín | Servicio Técnico Urgente">
+    <meta name="twitter:description" content="Servicio técnico profesional con garantía de 4 meses. Visita en 24h.">
+    <meta name="twitter:image" content="https://image.qwenlm.ai/public_source/01afd6ca-f8a8-4e27-9b56-6db79b238c0b/16751779b-85c6-4242-b76b-c8f555e3a542.png">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://image.qwenlm.ai/public_source/01afd6ca-f8a8-4e27-9b56-6db79b238c0b/16751779b-85c6-4242-b76b-c8f555e3a542.png">
+    
+    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "HomeAndConstructionBusiness",
-      "name": "VENGAS Medellín",
-      "image": "https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/logo.webp",
-      "@id": "https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/",
-      "url": "https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/",
-      "telephone": "+573238404024",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Medellín",
-        "addressLocality": "Medellín",
-        "addressRegion": "Antioquia",
-        "addressCountry": "CO"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 6.244203,
-        "longitude": -75.581211
-      },
-      "openingHours": "Mo-Sa 07:00-18:00",
-      "priceRange": "$$",
-      "currenciesAccepted": "COP",
-      "paymentAccepted": "Efectivo, Nequi, Daviplata, Transferencia Bancolombia",
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Medellín"
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "VENGAS Medellín",
+        "description": "Servicio técnico profesional para calentadores, lavadoras, neveras y gasodomésticos en Medellín y Valle de Aburrá",
+        "url": "https://vengasdigital-cmd.github.io/VENGAS-MEDELLIN/",
+        "telephone": "+573238404024",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Medellín",
+            "addressRegion": "Antioquia",
+            "addressCountry": "CO"
         },
-        {
-          "@type": "City",
-          "name": "Envigado"
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "6.2442",
+            "longitude": "-75.5812"
         },
-        {
-          "@type": "City",
-          "name": "Sabaneta"
+        "openingHours": "Mo-Sa 07:00-18:00",
+        "priceRange": "$60.000 - $300.000",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "1200"
         },
-        {
-          "@type": "City",
-          "name": "Itagüí"
-        }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61580805415732",
-        "https://www.instagram.com/vengas_medellin/reels/",
-        "https://wa.me/573238404024"
-      ],
-      "description": "Ingeniería de soporte técnico en Medellín y Valle de Aburrá para reparación urgente de lavadoras, neveras, calentadores y gasodomésticos. Servicio domiciliar con garantía certificada de 4 meses."
+        "image": "https://image.qwenlm.ai/public_source/01afd6ca-f8a8-4e27-9b56-6db79b238c0b/16751779b-85c6-4242-b76b-c8f555e3a542.png"
     }
     </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123DEF4"></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-ABC123DEF4');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0066CC',
+                            dark: '#0a1628',
+                            darker: '#060d1a',
+                            orange: '#FF6B00',
+                            light: '#E8F4FD',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delay': 'float 6s ease-in-out 2s infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'slide-down': 'slideDown 0.5s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                        'ripple': 'ripple 1.5s linear infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        ripple: {
+                            '0%': { transform: 'scale(1)', opacity: '0.6' },
+                            '100%': { transform: 'scale(2.5)', opacity: '0' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(0, 102, 204, 0.4), 0 0 40px rgba(0, 102, 204, 0.2)' },
+                            '100%': { boxShadow: '0 0 40px rgba(0, 102, 204, 0.6), 0 0 80px rgba(0, 102, 204, 0.3)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% center' },
+                            '100%': { backgroundPosition: '200% center' },
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
     </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&family=JetBrains+Mono:wght@500;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <!-- Fuentes y Estilos -->
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&family=JetBrains+Mono:wght@500;800&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preload" href="styles.css" as="style">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: #0a1628;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #0066CC 0%, #00A3FF 50%, #FF6B00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        .gradient-text-static {
+            background: linear-gradient(135deg, #0066CC, #FF6B00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(180deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 102, 204, 0.1);
+        }
+        
+        .service-card {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.03);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg) scale(1.1);
+        }
+        
+        .service-icon {
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #0066CC, #FF6B00);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 1px;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B00, #FF8C33, #FF6B00);
+            background-size: 200% 200%;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            background-position: right center;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 0, 0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.3);
+        }
+        
+        .emergency-banner {
+            animation: pulse-emergency 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-emergency {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+        
+        .logo-glow {
+            filter: drop-shadow(0 0 40px rgba(0, 102, 204, 0.6)) drop-shadow(0 0 80px rgba(0, 102, 204, 0.3));
+        }
+        
+        .logo-glow-orange {
+            filter: drop-shadow(0 0 40px rgba(255, 107, 0, 0.5)) drop-shadow(0 0 80px rgba(255, 107, 0, 0.2));
+        }
+        
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0a1628;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #0066CC, #FF6B00);
+            border-radius: 3px;
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .brand-marquee {
+            animation: marquee 25s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .counter-number {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.5s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .testimonial-card {
+            transition: all 0.4s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .wave-divider {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(rgba(0, 102, 204, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        .section-dark {
+            background: linear-gradient(180deg, #0a1628 0%, #0d1f3c 100%);
+        }
+        
+        .section-alt {
+            background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+        }
+        
+        .price-highlight {
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.1), rgba(0, 102, 204, 0.1));
+            border: 1px solid rgba(255, 107, 0, 0.2);
+        }
+        
+        .mobile-menu-overlay {
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        
+        .whatsapp-pulse {
+            animation: whatsapp-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes whatsapp-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            50% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+        }
+        
+        .hero-orb-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 102, 204, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+        }
+        
+        .hero-orb-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 12s ease-in-out 3s infinite;
+        }
+        
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .coverage-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .coverage-tag:hover {
+            background: rgba(0, 102, 204, 0.2);
+            border-color: rgba(0, 102, 204, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .process-line {
+            background: linear-gradient(90deg, #0066CC, #FF6B00, #0066CC);
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        .testimonial-stars {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 </head>
-<body>
-    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+<body class="bg-brand-dark text-white">
 
-    <div id="particles-js"></div>
-    <div id="cursor-aura"></div>
-
-    <header class="page-header">
-
-        <nav aria-label="Menú principal">
-            <div class="nav-brand">
-                <div class="logo-box"><img src="logo.webp" alt="Logotipo de VENGAS Medellín" width="52" height="52" loading="lazy" decoding="async"></div>
-                <div class="nav-title"><span>VENGAS</span><small>Soporte técnico profesional</small></div>
-            </div>
-            <div class="nav-links">
-                <a href="#servicios">Servicios</a>
-                <a href="#cobertura">Cobertura</a>
-                <a href="#faq">Preguntas</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-        </nav>
-    </header>
-
-    <main id="main-content">
-    <div class="container">
-        <header class="hero" data-aos="fade-up">
-            <div class="hero-topline">
-                <span class="hero-chip"><i class="fas fa-bolt"></i> Respuesta en 24h</span>
-                <span class="hero-pill"><i class="fas fa-shield-alt"></i> Garantía técnica 4 meses</span>
-                <span class="hero-pill"><i class="fas fa-map-marker-alt"></i> Cobertura Valle de Aburrá</span>
-            </div>
-            <h1>VENGAS MEDELLÍN <br><span class="grad" id="typed-text"></span></h1>
-            <p class="hero-subtitle">Servicio técnico premium en Medellín y Valle de Aburrá. Atención VIP, diagnósticos precisos y garantía certificada para equipos de alto rendimiento.</p>
-            <div class="badge-grid">
-                <span class="badge"><i class="fas fa-shield-alt"></i> GARANTÍA 4 MESES</span>
-                <span class="badge"><i class="fas fa-bolt"></i> ATENCIÓN 24H</span>
-                <span class="badge"><i class="fas fa-user-check"></i> TECNICOS CERTIFICADOS</span>
-            </div>
-            <div class="hero-actions">
-                <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Quiero%20agendar%20mi%20cita%20hoy%20para%20servicio%20t%C3%A9cnico" class="hero-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-calendar-check"></i> Agenda tu cita hoy</a>
-                <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Necesito%20soporte%20t%C3%A9cnico%20inmediato" class="hero-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Chatea por WhatsApp</a>
-            </div>
-            <p class="hero-note">Confianza total para tu hogar: revisión técnica inmediata, presupuesto claro y reparación con garantía. Cada servicio está diseñado para brindar tranquilidad y resultados rápidos.</p>
-            <div class="hero-metrics">
-                <div class="metric-card"><strong data-target="1200">0</strong><span>Servicios realizados</span></div>
-                <div class="metric-card"><strong data-target="4">0</strong><span>Meses de garantía</span></div>
-                <div class="metric-card"><strong data-target="24">0</strong><span>Horas de respuesta</span></div>
-            </div>
-        </header>
-
-        <section class="hero-details" data-aos="fade-up">
-            <h2>Servicio técnico urgente en Medellín y Valle de Aburrá</h2>
-            <p>Atendemos lavadoras, neveras, calentadores y gasodomésticos con atención a domicilio en Medellín, Envigado, Sabaneta, Itagüí y Bello. Diagnóstico rápido, reparación certificada y soporte técnico confiable.</p>
-            <ul class="benefits-list">
-                <li>Técnicos expertos en equipos de hogar y gasodomésticos.</li>
-                <li>Visita técnica programada en menos de 24 horas.</li>
-                <li>Garantía de hasta 4 meses en mano de obra y repuestos.</li>
-            </ul>
-        </section>
-
-        <section class="section-title" data-aos="fade-up">
-            <h2>Tecnología y Confianza</h2>
-            <div class="accent-bar"></div>
-            <p class="section-subtitle">Última tecnología en diagnóstico digital, planificación rápida y seguridad certificada para tus electrodomésticos.</p>
-            <div class="tech-grid">
-                <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="tech-card-icon"><i class="fas fa-microchip"></i></div>
-                    <h3>Diagnóstico digital</h3>
-                    <p>Usamos técnicas de inspección digital y medición precisa para identificar fallas de forma rápida y confiable.</p>
-                </div>
-                <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="tech-card-icon"><i class="fas fa-whatsapp"></i></div>
-                    <h3>Reserva instantánea</h3>
-                    <p>Agenda tu visita por WhatsApp en segundos y recibe confirmación inmediata con seguimiento personalizado.</p>
-                </div>
-                <div class="tech-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="tech-card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-                    <h3>Control transparente</h3>
-                    <p>Presupuestos claros, informes técnicos y garantía digital para que siempre sepas qué haces y por qué.</p>
-                </div>
-                <div class="tech-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="tech-card-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Seguridad certificada</h3>
-                    <p>Instalaciones y reparaciones realizadas según normas, con foco en la seguridad de tu familia y tus electrodomésticos.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="brands-slider" data-aos="fade-in">
-            <div class="brands-track">
-                <div class="brand-item">HACEB</div><div class="brand-item">BOSCH</div><div class="brand-item">CHALLENGER</div>
-                <div class="brand-item">LG</div><div class="brand-item">SAMSUNG</div><div class="brand-item">WHIRLPOOL</div><div class="brand-item">MABE</div>
-                <div class="brand-item">HACEB</div><div class="brand-item">BOSCH</div><div class="brand-item">CHALLENGER</div>
-                <div class="brand-item">LG</div><div class="brand-item">SAMSUNG</div><div class="brand-item">WHIRLPOOL</div><div class="brand-item">MABE</div>
-            </div>
-        </div>
-
-        <section id="servicios" class="section-title" data-aos="bounce-in">
-            <h2>Portafolio de Servicios</h2>
-            <div class="accent-bar"></div>
-            <div class="persuasive-banner" data-aos="zoom-in">
-                <i class="fas fa-fire"></i> Técnicos expertos, precios justos, garantía total. ¡No esperes más!
-                <span class="banner-subtext">Cupos limitados hoy. Reserva tu cita antes que se agoten.</span>
-            </div>
-        </section>
-
-        <div class="services-grid">
-            <!-- Partículas de fuego -->
-            <div class="fire-particles">
-                <div class="fire-particle"></div>
-                <div class="fire-particle"></div>
-                <div class="fire-particle"></div>
-                <div class="fire-particle"></div>
-                <div class="fire-particle"></div>
-            </div>
-            <div class="glass-card" data-aos="zoom-in" data-aos-delay="100">
-                <div class="urgency-badge">¡URGENTE!</div>
-                <i class="fas fa-fire card-icon"></i>
-                <h3>🔥 CUBIERTAS</h3>
-                <div class="service-tag"><i class="fas fa-calendar-check"></i> Agenda tu cita hoy</div>
-                <p class="service-card-note">Visita exprés con técnicos certificados y respuesta prioritaria.</p>
-                <div class="price-row"><span class="p-label">4 Puestos (Vidrio/Inox)</span> <span class="p-value price-highlight">$130.000</span></div>
-                <div class="price-row" style="border:none;"><span class="p-label">5 Puestos (Vidrio/Inox)</span> <span class="p-value price-highlight">$180.000</span></div>
-                <a href="https://wa.me/573238404024?text=Hola!%20Quiero%20reparar%20mi%20cubiertas%20con%20VENGAS" class="card-cta" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-rocket"></i> ¡Agenda tu cita hoy!
-                </a>
-            </div>
-
-            <div class="glass-card" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fas fa-tint card-icon"></i>
-                <h3>💧 CALENTADORES</h3>
-                <div class="service-tag"><i class="fas fa-calendar-check"></i> Agenda tu cita hoy</div>
-                <p class="service-card-note">Reparación segura de calentadores con respuesta prioritaria y piezas de calidad.</p>
-                <div class="price-row"><span class="p-label">Paso 5.5 LT</span> <span class="p-value price-highlight">$130.000</span></div>
-                <div class="price-row"><span class="p-label">8 a 14 LT</span> <span class="p-value price-highlight">$160.000</span></div>
-                <div class="price-row"><span class="p-label">Therm 8000</span> <span class="p-value price-highlight">$300.000</span></div>
-                <div class="price-row" style="border:none;"><span class="p-label">Acumulación</span> <span class="p-value price-highlight">$140.000</span></div>
-                <a href="https://wa.me/573238404024?text=Hola!%20Necesito%20reparar%20mi%20calentador%20con%20VENGAS" class="card-cta" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-rocket"></i> ¡Agenda tu cita hoy!
-                </a>
-            </div>
-
-            <div class="glass-card" data-aos="zoom-in" data-aos-delay="300">
-                <i class="fas fa-tools card-icon"></i>
-                <h3>🔧 INSTALACIONES GAS</h3>
-                <div class="service-tag"><i class="fas fa-calendar-check"></i> Agenda tu cita hoy</div>
-                <p class="service-card-note">Instalación y revisión con enfoque en seguridad total y normas técnicas vigentes.</p>
-                <div class="price-row"><span class="p-label">Revisión Prevención</span> <span class="p-value price-highlight">$80.000</span></div>
-                <div class="price-row"><span class="p-label">Instalación Pto Cero</span> <span class="p-value price-highlight">$200.000</span></div>
-                <div class="price-row" style="border:none;"><span class="p-label">Desinstalar e Instalar</span> <span class="p-value price-highlight">$170.000</span></div>
-                <a href="https://wa.me/573238404024?text=Hola!%20Quiero%20instalación%20de%20gas%20con%20VENGAS" class="card-cta" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-rocket"></i> ¡Agenda tu cita hoy!
-                </a>
-            </div>
-
-            <div class="glass-card" data-aos="zoom-in" data-aos-delay="400">
-                <i class="fas fa-tshirt card-icon"></i>
-                <h3>👕 LAVADO Y SECADO</h3>
-                <div class="service-tag"><i class="fas fa-calendar-check"></i> Agenda tu cita hoy</div>
-                <p class="service-card-note">Mantenimiento de lavadoras y secadoras con revisión técnica y optimización de rendimiento.</p>
-                <div class="price-row"><span class="p-label">Carga superior</span> <span class="p-value price-highlight">$190.000</span></div>
-                <div class="price-row"><span class="p-label">Lavadora carga frontal</span> <span class="p-value price-highlight">$280.000</span></div>
-                <div class="price-row" style="border:none;"><span class="p-label">Revisión de secadora</span> <span class="p-value price-highlight">$90.000</span></div>
-                <a href="https://wa.me/573238404024?text=Hola!%20Mi%20lavadora%20necesita%20reparación%20con%20VENGAS" class="card-cta" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-rocket"></i> ¡Agenda tu cita hoy!
-                </a>
-            </div>
-
-            <div class="glass-card" data-aos="zoom-in" data-aos-delay="500">
-                <i class="fas fa-snowflake card-icon"></i>
-                <h3>❄ REFRIGERACIÓN</h3>
-                <div class="service-tag"><i class="fas fa-calendar-check"></i> Agenda tu cita hoy</div>
-                <p class="service-card-note">Reparación de neveras, nevecón y lavavajillas con ajuste frío exacto y rendimiento máximo.</p>
-                <div class="price-row"><span class="p-label">Servicio Nevera</span> <span class="p-value price-highlight">$140.000</span></div>
-                <div class="price-row"><span class="p-label">Servicio Nevecón</span> <span class="p-value price-highlight">$160.000</span></div>
-                <div class="price-row" style="border:none;"><span class="p-label">Lavavajillas</span> <span class="p-value price-highlight">$140.000</span></div>
-                <a href="https://wa.me/573238404024?text=Hola!%20Mi%20nevera%20necesita%20servicio%20con%20VENGAS" class="card-cta" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-rocket"></i> ¡Agenda tu cita hoy!
-                </a>
-            </div>
-
-            <div class="glass-card" data-aos="zoom-in" data-aos-delay="600">
-                <i class="fas fa-screwdriver-wrench card-icon"></i>
-                <h3>🛠 SERVICIO TÉCNICO</h3>
-                <div class="service-tag"><i class="fas fa-calendar-check"></i> Agenda tu cita hoy</div>
-                <p class="service-card-note">Soluciones completas para refrigeración, gasodomésticos y electrodomésticos domésticos.</p>
-                <div class="price-row"><span class="p-label">S.T. Gasodoméstico</span> <span class="p-value price-highlight">$100.000</span></div>
-                <div class="price-row"><span class="p-label">S.T. Electrodoméstico</span> <span class="p-value price-highlight">$150.000</span></div>
-                <div class="price-row" style="border:none;"><span class="p-label">Visita Técnica</span> <span class="p-value price-highlight">$60.000</span></div>
-                <a href="https://wa.me/573238404024?text=Hola!%20Necesito%20servicio%20técnico%20con%20VENGAS" class="card-cta" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-rocket"></i> ¡Agenda tu cita hoy!
-                </a>
-            </div>
-        </div>
-
-        <section id="faq" class="section-title" data-aos="fade-up">
-            <h2>Preguntas Frecuentes</h2>
-            <div class="accent-bar"></div>
-        </section>
-
-        <div class="faq-container" data-aos="fade-up">
-            <div class="faq-item" data-aos="fade-right">
-                <div class="faq-question">¿Tienen cobertura en todo Medellín? <i class="fas fa-chevron-down faq-icon"></i></div>
-                <div class="faq-answer">Sí, atendemos en todo el Valle de Aburrá: Medellín, Envigado, Sabaneta, Itagüí, La Estrella, Caldas, Bello, Copacabana, Girardota y Barbosa.</div>
-            </div>
-            <div class="faq-item" data-aos="fade-right" data-aos-delay="100">
-                <div class="faq-question">¿Cuánto tiempo dura la garantía? <i class="fas fa-chevron-down faq-icon"></i></div>
-                <div class="faq-answer">Ofrecemos una garantía certificada de hasta 4 meses por mano de obra y repuestos instalados. Entregamos un documento técnico oficial por cada servicio.</div>
-            </div>
-            <div class="faq-item" data-aos="fade-right" data-aos-delay="200">
-                <div class="faq-question">¿Si realizo la reparación, debo pagar el valor de la visita? <i class="fas fa-chevron-down faq-icon"></i></div>
-                <div class="faq-answer">No. Si decides realizar el servicio o reparación con nosotros una vez entregado el diagnóstico, el valor de la visita técnica se abona al costo total del trabajo.</div>
-            </div>
-            <div class="faq-item" data-aos="fade-right" data-aos-delay="300">
-                <div class="faq-question">¿Qué marcas reparan? <i class="fas fa-chevron-down faq-icon"></i></div>
-                <div class="faq-answer">Somos expertos multimarca: Haceb, Bosch, Challenger, LG, Samsung, Whirlpool, Mabe, Electrolux, Abba y marcas importadas de alta gama.</div>
-            </div>
-            <div class="faq-item" data-aos="fade-right" data-aos-delay="400">
-                <div class="faq-question">¿En qué horarios atienden? <i class="fas fa-chevron-down faq-icon"></i></div>
-                <div class="faq-answer">Nuestro horario de atención es de Lunes a Sábado de 7:00 AM a 6:00 PM. También atendemos urgencias técnicas fuera de horario previa disponibilidad.</div>
-            </div>
-            <div class="faq-item" data-aos="fade-right" data-aos-delay="500">
-                <div class="faq-question">¿Qué medios de pago aceptan? <i class="fas fa-chevron-down faq-icon"></i></div>
-                <div class="faq-answer">Aceptamos efectivo, transferencias Bancolombia, Nequi y Daviplata al finalizar el servicio para tu mayor comodidad.</div>
-            </div>
-        </div>
-
-        <section class="section-title" data-aos="fade-up">
-            <h2>Proceso de Servicio</h2>
-            <div class="accent-bar"></div>
-        </section>
-
-        <div class="process-grid">
-            <div class="step-card" data-aos="flip-left" data-aos-delay="100">
-                <div class="step-num"><i class="fas fa-calendar-check"></i></div>
-                <h4>Agenda tu cita hoy</h4>
-                <p style="color:var(--text-muted); font-size:0.85rem;">Escríbenos ahora por WhatsApp y asegura tu visita técnica exprés en menos de 24 horas.</p>
-            </div>
-            <div class="step-card" data-aos="flip-left" data-aos-delay="200">
-                <div class="step-num"><i class="fas fa-search"></i></div>
-                <h4>Diagnóstico</h4>
-                <p style="color:var(--text-muted); font-size:0.85rem;">Nuestros técnicos expertos revisan tu equipo y dan un presupuesto justo.</p>
-            </div>
-            <div class="step-card" data-aos="flip-left" data-aos-delay="300">
-                <div class="step-num"><i class="fas fa-wrench"></i></div>
-                <h4>Reparación</h4>
-                <p style="color:var(--text-muted); font-size:0.85rem;">Realizamos el trabajo con repuestos de calidad y normas de seguridad.</p>
-            </div>
-            <div class="step-card" data-aos="flip-left" data-aos-delay="400">
-                <div class="step-num"><i class="fas fa-shield-alt"></i></div>
-                <h4>Garantía</h4>
-                <p style="color:var(--text-muted); font-size:0.85rem;">Recibes tu certificado técnico con garantía de hasta 4 meses.</p>
-            </div>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner bg-gradient-to-r from-red-600 via-red-500 to-orange-500 text-white py-2.5 text-center relative z-50">
+        <div class="container mx-auto px-4 flex items-center justify-center gap-2 flex-wrap">
+            <i class="fas fa-bolt animate-bounce text-yellow-300"></i>
+            <span class="font-bold text-sm md:text-base">🔥 ¡Cupos limitados hoy! Agenda tu visita técnica urgente en Medellín</span>
+            <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Necesito%20servicio%20técnico%20URGENTE" class="bg-white text-red-600 px-4 py-1.5 rounded-full text-xs font-bold hover:bg-gray-100 transition-all duration-300 ml-2 hover:scale-105">
+                ¡Reservar Ahora!
+            </a>
         </div>
     </div>
 
-<!-- SECCIÓN SEO LOCAL: MAPA Y BARRIOS -->
-        <section id="cobertura" class="section-title" data-aos="fade-up">
-            <h2>Cobertura Garantizada</h2>
-            <div class="accent-bar"></div>
-            <div class="coverage-grid" data-aos="zoom-in">
-                <div class="coverage-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126916.6358822008!2d-75.6512521!3d6.2442033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80fad27%3A0x43b35306631adbf2!2sMedell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" width="100%" height="360" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div class="coverage-info">
-                    <span class="coverage-pill"><i class="fas fa-bolt"></i> Atención 24h</span>
-                    <h3>Medellín y el Valle de Aburrá a tu alcance</h3>
-                    <p class="service-card-note">Visita técnica rápida en zonas clave con soporte local, garantía y respuestas urgentes garantizadas.</p>
-                    <div class="coverage-list">
-                        <span><i class="fas fa-check-circle"></i> Poblado</span>
-                        <span><i class="fas fa-check-circle"></i> Laureles</span>
-                        <span><i class="fas fa-check-circle"></i> Envigado</span>
-                        <span><i class="fas fa-check-circle"></i> Sabaneta</span>
-                        <span><i class="fas fa-check-circle"></i> Itagüí</span>
-                        <span><i class="fas fa-check-circle"></i> Bello</span>
-                        <span><i class="fas fa-check-circle"></i> Belén</span>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-500" style="top: 44px;">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-2 md:gap-3 group">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 ring-2 ring-white/20 group-hover:ring-orange-400/50">
+                        <img src="logo.png" alt="VENGAS Medellín - Servicio Técnico Urgente" class="w-full h-full object-cover" onerror="this.src='https://image.qwenlm.ai/public_source/01afd6ca-f8a8-4e27-9b56-6db79b238c0b/16751779b-85c6-4242-b76b-c8f555e3a542.png'; this.onerror=null;">
                     </div>
-                    <div class="coverage-list">
-                        <span><i class="fas fa-bolt"></i> Diagnóstico exprés</span>
-                        <span><i class="fas fa-shield-alt"></i> Garantía 4 meses</span>
-                        <span><i class="fas fa-user-check"></i> Técnicos certificados</span>
+                    <div class="hidden sm:block">
+                        <span class="text-lg md:text-xl font-extrabold text-white group-hover:text-orange-400 transition-colors duration-300 tracking-tight">VENGAS</span>
+                        <span class="text-[10px] md:text-xs text-blue-300 block -mt-1 font-semibold tracking-widest uppercase">Medellín</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden xl:flex items-center gap-1">
+                    <a href="#inicio" class="nav-link active text-white/80 hover:text-white transition text-sm font-medium px-3">Inicio</a>
+                    <a href="#servicios" class="nav-link text-white/80 hover:text-white transition text-sm font-medium px-3">Servicios</a>
+                    <a href="#cobertura" class="nav-link text-white/80 hover:text-white transition text-sm font-medium px-3">Cobertura</a>
+                    <a href="#proceso" class="nav-link text-white/80 hover:text-white transition text-sm font-medium px-3">Proceso</a>
+                    <a href="#testimonios" class="nav-link text-white/80 hover:text-white transition text-sm font-medium px-3">Testimonios</a>
+                    <a href="#faq" class="nav-link text-white/80 hover:text-white transition text-sm font-medium px-3">FAQ</a>
+                    <a href="#contacto" class="nav-link text-white/80 hover:text-white transition text-sm font-medium px-3">Contacto</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden xl:block">
+                    <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Necesito%20un%20servicio%20técnico%20profesional" class="btn-primary text-white px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg">
+                        <i class="fab fa-whatsapp text-base"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="xl:hidden text-white text-xl p-2 hover:text-orange-400 transition">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="xl:hidden hidden mobile-menu-overlay border-t border-white/10">
+            <div class="container mx-auto px-4 py-6 space-y-1">
+                <a href="#inicio" class="block text-white hover:text-orange-400 py-3 px-4 rounded-xl hover:bg-white/5 transition font-medium">
+                    <i class="fas fa-home mr-3 text-blue-400"></i>Inicio
+                </a>
+                <a href="#servicios" class="block text-white hover:text-orange-400 py-3 px-4 rounded-xl hover:bg-white/5 transition font-medium">
+                    <i class="fas fa-tools mr-3 text-orange-400"></i>Servicios
+                </a>
+                <a href="#cobertura" class="block text-white hover:text-orange-400 py-3 px-4 rounded-xl hover:bg-white/5 transition font-medium">
+                    <i class="fas fa-map mr-3 text-green-400"></i>Cobertura
+                </a>
+                <a href="#proceso" class="block text-white hover:text-orange-400 py-3 px-4 rounded-xl hover:bg-white/5 transition font-medium">
+                    <i class="fas fa-list-ol mr-3 text-purple-400"></i>Proceso
+                </a>
+                <a href="#testimonios" class="block text-white hover:text-orange-400 py-3 px-4 rounded-xl hover:bg-white/5 transition font-medium">
+                    <i class="fas fa-star mr-3 text-yellow-400"></i>Testimonios
+                </a>
+                <a href="#faq" class="block text-white hover:text-orange-400 py-3 px-4 rounded-xl hover:bg-white/5 transition font-medium">
+                    <i class="fas fa-question-circle mr-3 text-cyan-400"></i>FAQ
+                </a>
+                <a href="#contacto" class="block text-white hover:text-orange-400 py-3 px-4 rounded-xl hover:bg-white/5 transition font-medium">
+                    <i class="fas fa-envelope mr-3 text-pink-400"></i>Contacto
+                </a>
+                <a href="https://wa.me/573238404024" class="btn-primary text-white px-6 py-3.5 rounded-full font-bold text-base flex items-center justify-center gap-2 mt-6 shadow-lg">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    <span>Agendar por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg relative min-h-screen flex items-center overflow-hidden">
+        <!-- Hero Pattern -->
+        <div class="absolute inset-0 hero-pattern opacity-30"></div>
+        
+        <!-- Gradient Orbs -->
+        <div class="hero-orb-1 top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="hero-orb-2 bottom-0 right-0 translate-x-1/2 translate-y-1/2"></div>
+        
+        <!-- Animated Particles -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="particle w-2 h-2 bg-blue-500/40 top-[15%] left-[10%] animate-float"></div>
+            <div class="particle w-3 h-3 bg-orange-500/30 top-[25%] left-[85%] animate-float-delay"></div>
+            <div class="particle w-2 h-2 bg-cyan-400/40 top-[65%] left-[20%] animate-float" style="animation-delay: 1s;"></div>
+            <div class="particle w-4 h-4 bg-blue-400/20 top-[75%] left-[75%] animate-float-delay" style="animation-delay: 2s;"></div>
+            <div class="particle w-2 h-2 bg-orange-400/30 top-[45%] left-[50%] animate-float" style="animation-delay: 3s;"></div>
+            <div class="particle w-3 h-3 bg-blue-300/20 top-[85%] left-[35%] animate-float-delay" style="animation-delay: 4s;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10 pt-28 md:pt-32 pb-16">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 text-orange-400 px-5 py-2.5 rounded-full text-sm font-semibold mb-6 animate-slide-up">
+                        <i class="fas fa-bolt"></i>
+                        <span>Servicio Técnico Urgente en Medellín</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-6 animate-slide-up" style="animation-delay: 0.1s;">
+                        Reparación<br>
+                        Profesional con<br>
+                        <span class="gradient-text">Garantía Total</span>
+                    </h1>
+                    
+                    <p class="text-base md:text-lg text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
+                        Técnicos certificados para <strong class="text-white">calentadores</strong>, <strong class="text-white">lavadoras</strong>, <strong class="text-white">neveras</strong> y <strong class="text-white">gasodomésticos</strong>. Visita en menos de 24 horas con garantía de 4 meses.
+                    </p>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-8 animate-slide-up" style="animation-delay: 0.3s;">
+                        <div class="flex items-center gap-2 glass-card px-4 py-2.5 rounded-full">
+                            <i class="fas fa-shield-alt text-green-400 text-sm"></i>
+                            <span class="text-white/90 text-sm font-medium">4 Meses Garantía</span>
+                        </div>
+                        <div class="flex items-center gap-2 glass-card px-4 py-2.5 rounded-full">
+                            <i class="fas fa-clock text-blue-400 text-sm"></i>
+                            <span class="text-white/90 text-sm font-medium">Respuesta en 24h</span>
+                        </div>
+                        <div class="flex items-center gap-2 glass-card px-4 py-2.5 rounded-full">
+                            <i class="fas fa-user-check text-orange-400 text-sm"></i>
+                            <span class="text-white/90 text-sm font-medium">Técnicos Certificados</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10 animate-slide-up" style="animation-delay: 0.4s;">
+                        <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Quiero%20agendar%20mi%20cita%20hoy%20para%20servicio%20técnico" class="btn-primary text-white px-8 py-4 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-3 shadow-2xl">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>Agendar Cita Hoy</span>
+                        </a>
+                        <a href="#servicios" class="btn-secondary text-white px-8 py-4 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-3">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>Ver Servicios</span>
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-4 md:gap-6 animate-slide-up" style="animation-delay: 0.5s;">
+                        <div class="stat-card glass-card rounded-2xl p-4 text-center lg:text-left">
+                            <div class="text-2xl md:text-3xl font-black text-white counter-number" data-target="1200">0</div>
+                            <div class="text-xs text-gray-400 font-medium">Servicios</div>
+                        </div>
+                        <div class="stat-card glass-card rounded-2xl p-4 text-center lg:text-left">
+                            <div class="text-2xl md:text-3xl font-black text-white counter-number" data-target="4">0</div>
+                            <div class="text-xs text-gray-400 font-medium">Meses Garantía</div>
+                        </div>
+                        <div class="stat-card glass-card rounded-2xl p-4 text-center lg:text-left">
+                            <div class="text-2xl md:text-3xl font-black text-white">24h</div>
+                            <div class="text-xs text-gray-400 font-medium">Respuesta</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Logo -->
+                <div class="flex justify-center lg:justify-end order-1 lg:order-2">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-orange-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+                        <div class="absolute inset-[-20px] border border-white/5 rounded-full animate-spin" style="animation-duration: 20s;"></div>
+                        <div class="absolute inset-[-40px] border border-white/[0.03] rounded-full animate-spin" style="animation-duration: 30s; animation-direction: reverse;"></div>
+                        <img src="logo.png" alt="VENGAS Medellín - Logo Servicio Técnico Profesional" class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 logo-glow animate-float" onerror="this.src='https://image.qwenlm.ai/public_source/01afd6ca-f8a8-4e27-9b56-6db79b238c0b/16751779b-85c6-4242-b76b-c8f555e3a542.png'; this.onerror=null;">
                     </div>
                 </div>
             </div>
-        </section>
-        <div class="trust-strip" data-aos="fade-up">
-            <div class="trust-pill"><i class="fas fa-star"></i><span><span class="trust-value">4.9/5</span><span class="trust-label">Valoración promedio</span></span></div>
-            <div class="trust-pill"><i class="fas fa-user-friends"></i><span><span class="trust-value">1.200+</span><span class="trust-label">Servicios entregados</span></span></div>
-            <div class="trust-pill"><i class="fas fa-clock"></i><span><span class="trust-value">24h</span><span class="trust-label">Respuesta garantizada</span></span></div>
-            <div class="trust-pill"><i class="fas fa-shield-alt"></i><span><span class="trust-value">4 meses</span><span class="trust-label">Garantía total</span></span></div>
         </div>
-        <div class="contact-blast" data-aos="fade-up" data-aos-delay="100">
-            <div>
-                <h3>Agenda tu cita hoy y recibe atención exprés</h3>
-                <p>Contacta por WhatsApp y asegura tu visita técnica en menos de 24 horas. Atención premium para equipos del hogar y gasodomésticos.</p>
-            </div>
-            <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Quiero%20agendar%20mi%20cita%20hoy%20para%20servicio%20t%C3%A9cnico" class="contact-btn" target="_blank" rel="noopener noreferrer">Agenda tu cita hoy</a>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider relative z-10 bg-brand-dark">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" class="block w-full h-12 md:h-16">
+            <path d="M0,40 C360,100 720,0 1080,60 C1260,90 1380,50 1440,40 L1440,100 L0,100 Z" fill="#0d1f3c"></path>
+        </svg>
+    </div>
+
+    <!-- Brands Marquee -->
+    <section class="py-10 bg-[#0d1f3c] overflow-hidden border-y border-white/5">
+        <div class="container mx-auto px-4 mb-5">
+            <p class="text-center text-gray-500 text-xs font-semibold uppercase tracking-[0.2em]">Marcas que reparamos</p>
         </div>
-        <a class="back-to-top" href="#main-content" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></a>
-    </main>
-    <footer id="contacto" data-aos="fade-up">
-        <div class="footer-grid">
-            <div>
-                <h3 style="color:var(--primary); margin-bottom:10px;">VENGAS ®</h3>
-                <p style="color:var(--text-muted); font-size: 0.85rem;">Técnicos calificados para el diagnóstico, instalación y reparación de equipos del hogar y sistemas de gas.</p>
-                <div class="social-banner">
-                    <a href="https://www.facebook.com/profile.php?id=61580805415732" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/vengas_medellin/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/573238404024" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <div class="relative overflow-hidden">
+            <div class="flex whitespace-nowrap">
+                <div class="brand-marquee flex items-center gap-10 md:gap-14 px-6">
+                    <span class="text-xl md:text-2xl font-bold text-white/20">HACEB</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">BOSCH</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">CHALLENGER</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">LG</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">SAMSUNG</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">WHIRLPOOL</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">MABE</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">ELECTROLUX</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">ABBA</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">HACEB</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">BOSCH</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">CHALLENGER</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">LG</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">SAMSUNG</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">WHIRLPOOL</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">MABE</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">ELECTROLUX</span>
+                    <span class="text-xl md:text-2xl font-bold text-white/20">ABBA</span>
                 </div>
             </div>
-            <div>
-                <h4 style="margin-bottom:10px;">ATENCIÓN</h4>
-                <p style="color:var(--text-muted); font-size: 0.85rem;"><i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Medellín y alrededores</p>
-                <p style="color:var(--text-muted); font-size: 0.85rem;"><i class="fas fa-phone" style="color:var(--primary);"></i> +57 323 840 4024</p>
-                <p style="color:var(--text-muted); font-size: 0.85rem; margin-top:10px;">📍 Quedamos atentos para programar tu visita.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 md:py-28 bg-[#0d1f3c] relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block bg-blue-500/10 border border-blue-500/20 text-blue-400 px-5 py-2 rounded-full text-xs font-semibold mb-4 uppercase tracking-wider">Portafolio de Servicios</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4">
+                    Precios Claros,<br>
+                    <span class="gradient-text-static">Soluciones Reales</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">Técnicos expertos, precios justos, garantía total. ¡No esperes más!</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Service 1: Calentadores -->
+                <div class="service-card glass-card rounded-2xl overflow-hidden scroll-reveal group">
+                    <div class="bg-gradient-to-br from-orange-500/20 to-red-500/20 p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-orange-500/10 rounded-full -mr-20 -mt-20"></div>
+                        <div class="service-icon w-14 h-14 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-lg">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Calentadores</h3>
+                        <p class="text-orange-300/70 text-sm">Reparación segura prioritaria</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">Paso 5.5 LT</span>
+                                <span class="font-bold text-white">$130.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">8 a 14 LT</span>
+                                <span class="font-bold text-white">$160.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">Therm 8000</span>
+                                <span class="font-bold text-white">$300.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5">
+                                <span class="text-gray-400 text-sm">Acumulación</span>
+                                <span class="font-bold text-white">$140.000</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/573238404024?text=Hola!%20Necesito%20reparar%20mi%20calentador%20con%20VENGAS" class="btn-primary text-white w-full py-3.5 rounded-xl font-semibold text-center flex items-center justify-center gap-2 text-sm">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Agendar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Lavadoras -->
+                <div class="service-card glass-card rounded-2xl overflow-hidden scroll-reveal group" style="transition-delay: 0.1s;">
+                    <div class="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full -mr-20 -mt-20"></div>
+                        <div class="service-icon w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-lg">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Lavado y Secado</h3>
+                        <p class="text-blue-300/70 text-sm">Revisión técnica y optimización</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">Carga superior</span>
+                                <span class="font-bold text-white">$190.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">Lavadora carga frontal</span>
+                                <span class="font-bold text-white">$280.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5">
+                                <span class="text-gray-400 text-sm">Revisión secadora</span>
+                                <span class="font-bold text-white">$90.000</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/573238404024?text=Hola!%20Mi%20lavadora%20necesita%20reparación%20con%20VENGAS" class="btn-secondary text-white w-full py-3.5 rounded-xl font-semibold text-center flex items-center justify-center gap-2 text-sm">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Agendar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Refrigeración -->
+                <div class="service-card glass-card rounded-2xl overflow-hidden scroll-reveal group" style="transition-delay: 0.2s;">
+                    <div class="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-cyan-500/10 rounded-full -mr-20 -mt-20"></div>
+                        <div class="service-icon w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-lg">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Refrigeración</h3>
+                        <p class="text-cyan-300/70 text-sm">Ajuste frío exacto</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">Servicio Nevera</span>
+                                <span class="font-bold text-white">$140.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">Servicio Nevecón</span>
+                                <span class="font-bold text-white">$160.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5">
+                                <span class="text-gray-400 text-sm">Lavavajillas</span>
+                                <span class="font-bold text-white">$140.000</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/573238404024?text=Hola!%20Mi%20nevera%20necesita%20servicio%20con%20VENGAS" class="btn-secondary text-white w-full py-3.5 rounded-xl font-semibold text-center flex items-center justify-center gap-2 text-sm">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Agendar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Gas -->
+                <div class="service-card glass-card rounded-2xl overflow-hidden scroll-reveal group" style="transition-delay: 0.3s;">
+                    <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-yellow-500/10 rounded-full -mr-20 -mt-20"></div>
+                        <div class="service-icon w-14 h-14 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-lg">
+                            <i class="fas fa-fire-flame-curved"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Instalaciones Gas</h3>
+                        <p class="text-yellow-300/70 text-sm">Seguridad total y normas vigentes</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">Revisión Prevención</span>
+                                <span class="font-bold text-white">$80.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">Instalación Pto Cero</span>
+                                <span class="font-bold text-white">$200.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5">
+                                <span class="text-gray-400 text-sm">Desinstalar e Instalar</span>
+                                <span class="font-bold text-white">$170.000</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/573238404024?text=Hola!%20Quiero%20instalación%20de%20gas%20con%20VENGAS" class="btn-primary text-white w-full py-3.5 rounded-xl font-semibold text-center flex items-center justify-center gap-2 text-sm">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Agendar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Cubiertas -->
+                <div class="service-card glass-card rounded-2xl overflow-hidden scroll-reveal group" style="transition-delay: 0.4s;">
+                    <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 rounded-full -mr-20 -mt-20"></div>
+                        <div class="service-icon w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-lg">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Cubiertas</h3>
+                        <p class="text-purple-300/70 text-sm">Vidrio e Inox</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">4 Puestos (Vidrio/Inox)</span>
+                                <span class="font-bold text-white">$130.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5">
+                                <span class="text-gray-400 text-sm">5 Puestos (Vidrio/Inox)</span>
+                                <span class="font-bold text-white">$180.000</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/573238404024?text=Hola!%20Quiero%20reparar%20mi%20cubierta%20con%20VENGAS" class="btn-secondary text-white w-full py-3.5 rounded-xl font-semibold text-center flex items-center justify-center gap-2 text-sm">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Agendar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6: Servicio Técnico General -->
+                <div class="service-card glass-card rounded-2xl overflow-hidden scroll-reveal group" style="transition-delay: 0.5s;">
+                    <div class="bg-gradient-to-br from-gray-500/20 to-gray-700/20 p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-gray-500/10 rounded-full -mr-20 -mt-20"></div>
+                        <div class="service-icon w-14 h-14 bg-gradient-to-br from-gray-500 to-gray-700 rounded-xl flex items-center justify-center text-white text-xl mb-4 shadow-lg">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Servicio Técnico</h3>
+                        <p class="text-gray-400/70 text-sm">Diagnóstico profesional</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">S.T. Gasodoméstico</span>
+                                <span class="font-bold text-white">$100.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
+                                <span class="text-gray-400 text-sm">S.T. Electrodoméstico</span>
+                                <span class="font-bold text-white">$150.000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2.5">
+                                <span class="text-gray-400 text-sm">Solo Visita Técnica</span>
+                                <span class="font-bold text-white">$60.000</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/573238404024?text=Hola!%20Necesito%20servicio%20técnico%20con%20VENGAS" class="btn-primary text-white w-full py-3.5 rounded-xl font-semibold text-center flex items-center justify-center gap-2 text-sm">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Agendar Cita</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div style="text-align:center; margin-top:40px; opacity:0.3; font-size:0.7rem;">
-            © 2026 VENGAS SERVICIOS TÉCNICOS. Medellín, Colombia.
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 md:py-28 bg-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0 hero-pattern opacity-20"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block bg-orange-500/10 border border-orange-500/20 text-orange-400 px-5 py-2 rounded-full text-xs font-semibold mb-4 uppercase tracking-wider">¿Por Qué Elegirnos?</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4">
+                    La Diferencia <span class="gradient-text-static">VENGAS</span>
+                </h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card rounded-2xl p-6 text-center hover:bg-white/5 transition-all duration-300 scroll-reveal group">
+                    <div class="w-16 h-16 mx-auto bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 text-2xl mb-5 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Respuesta Rápida</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Visita técnica en menos de 24 horas. Tu tiempo es importante para nosotros.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 text-center hover:bg-white/5 transition-all duration-300 scroll-reveal group" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 mx-auto bg-orange-500/10 rounded-2xl flex items-center justify-center text-orange-400 text-2xl mb-5 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Garantía 4 Meses</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Certificado técnico oficial por cada servicio. Trabajamos con confianza.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 text-center hover:bg-white/5 transition-all duration-300 scroll-reveal group" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 mx-auto bg-green-500/10 rounded-2xl flex items-center justify-center text-green-400 text-2xl mb-5 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Técnicos Certificados</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Personal capacitado y con experiencia en múltiples marcas y equipos.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 text-center hover:bg-white/5 transition-all duration-300 scroll-reveal group" style="transition-delay: 0.3s;">
+                    <div class="w-16 h-16 mx-auto bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-400 text-2xl mb-5 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Precios Justos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Presupuestos claros sin sorpresas. Pago al finalizar el servicio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="proceso" class="py-20 md:py-28 bg-[#0d1f3c] relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block bg-blue-500/10 border border-blue-500/20 text-blue-400 px-5 py-2 rounded-full text-xs font-semibold mb-4 uppercase tracking-wider">Proceso de Servicio</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4">
+                    ¿Cómo <span class="gradient-text-static">Trabajamos?</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">Un proceso simple y transparente para tu comodidad</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                <!-- Connecting Line (Desktop only) -->
+                <div class="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 process-line rounded-full z-0"></div>
+
+                <div class="text-center relative scroll-reveal">
+                    <div class="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl flex items-center justify-center text-3xl font-black mb-6 relative z-10 shadow-xl shadow-blue-500/20 rotate-3 hover:rotate-0 transition-transform duration-300">
+                        1
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Agenda tu Cita</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Escríbenos por WhatsApp y asegura tu visita técnica exprés en menos de 24 horas.</p>
+                </div>
+
+                <div class="text-center relative scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="w-24 h-24 mx-auto bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl flex items-center justify-center text-3xl font-black mb-6 relative z-10 shadow-xl shadow-orange-500/20 -rotate-3 hover:rotate-0 transition-transform duration-300">
+                        2
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Diagnóstico</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Nuestros técnicos expertos revisan tu equipo y dan un presupuesto justo y claro.</p>
+                </div>
+
+                <div class="text-center relative scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="w-24 h-24 mx-auto bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl flex items-center justify-center text-3xl font-black mb-6 relative z-10 shadow-xl shadow-purple-500/20 rotate-3 hover:rotate-0 transition-transform duration-300">
+                        3
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Reparación</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Realizamos el trabajo con repuestos de calidad y cumpliendo normas de seguridad.</p>
+                </div>
+
+                <div class="text-center relative scroll-reveal" style="transition-delay: 0.3s;">
+                    <div class="w-24 h-24 mx-auto bg-gradient-to-br from-green-500 to-green-600 text-white rounded-2xl flex items-center justify-center text-3xl font-black mb-6 relative z-10 shadow-xl shadow-green-500/20 -rotate-3 hover:rotate-0 transition-transform duration-300">
+                        4
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Garantía</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Recibes tu certificado técnico con garantía de hasta 4 meses por escrito.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Section -->
+    <section id="cobertura" class="py-20 md:py-28 bg-brand-dark relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="scroll-reveal">
+                    <span class="inline-block bg-blue-500/10 border border-blue-500/20 text-blue-400 px-5 py-2 rounded-full text-xs font-semibold mb-4 uppercase tracking-wider">Cobertura Garantizada</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
+                        Medellín y el<br>
+                        <span class="gradient-text-static">Valle de Aburrá</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">Visita técnica rápida en zonas clave con soporte local, garantía y respuestas urgentes garantizadas.</p>
+
+                    <div class="grid grid-cols-2 gap-3 mb-8">
+                        <div class="coverage-tag flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-xl cursor-pointer">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="font-medium text-white/90 text-sm">Medellín</span>
+                        </div>
+                        <div class="coverage-tag flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-xl cursor-pointer">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="font-medium text-white/90 text-sm">Envigado</span>
+                        </div>
+                        <div class="coverage-tag flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-xl cursor-pointer">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="font-medium text-white/90 text-sm">Sabaneta</span>
+                        </div>
+                        <div class="coverage-tag flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-xl cursor-pointer">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="font-medium text-white/90 text-sm">Itagüí</span>
+                        </div>
+                        <div class="coverage-tag flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-xl cursor-pointer">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="font-medium text-white/90 text-sm">Bello</span>
+                        </div>
+                        <div class="coverage-tag flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-xl cursor-pointer">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="font-medium text-white/90 text-sm">La Estrella</span>
+                        </div>
+                        <div class="coverage-tag flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-xl cursor-pointer">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="font-medium text-white/90 text-sm">Caldas</span>
+                        </div>
+                        <div class="coverage-tag flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-xl cursor-pointer">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span class="font-medium text-white/90 text-sm">Copacabana</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Quiero%20consultar%20la%20cobertura%20en%20mi%20zona" class="btn-primary text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 text-sm">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Consultar Cobertura</span>
+                    </a>
+                </div>
+
+                <div class="scroll-reveal">
+                    <div class="glass-card rounded-3xl p-8 md:p-10 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full -mr-20 -mt-20"></div>
+                        <div class="absolute bottom-0 left-0 w-40 h-40 bg-orange-500/10 rounded-full -ml-20 -mb-20"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="text-center mb-8">
+                                <div class="text-5xl md:text-6xl font-black gradient-text mb-2 counter-number" data-target="1200">0</div>
+                                <div class="text-gray-400 font-medium">Servicios Entregados</div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="text-center glass-card rounded-2xl p-4">
+                                    <div class="text-2xl md:text-3xl font-black text-white mb-1">4.9/5</div>
+                                    <div class="flex justify-center gap-0.5 mb-1">
+                                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    </div>
+                                    <div class="text-gray-500 text-xs">Valoración</div>
+                                </div>
+                                <div class="text-center glass-card rounded-2xl p-4">
+                                    <div class="text-2xl md:text-3xl font-black text-white mb-1">24h</div>
+                                    <div class="text-gray-500 text-xs mt-2">Respuesta</div>
+                                </div>
+                                <div class="text-center glass-card rounded-2xl p-4">
+                                    <div class="text-2xl md:text-3xl font-black text-white mb-1">4</div>
+                                    <div class="text-gray-500 text-xs mt-2">Meses Garantía</div>
+                                </div>
+                                <div class="text-center glass-card rounded-2xl p-4">
+                                    <div class="text-2xl md:text-3xl font-black text-white mb-1">8+</div>
+                                    <div class="text-gray-500 text-xs mt-2">Zonas Cubiertas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-20 md:py-28 bg-[#0d1f3c] relative overflow-hidden">
+        <div class="absolute inset-0 hero-pattern opacity-10"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block bg-orange-500/10 border border-orange-500/20 text-orange-400 px-5 py-2 rounded-full text-xs font-semibold mb-4 uppercase tracking-wider">Testimonios</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4">
+                    Lo que Dicen Nuestros<br>
+                    <span class="gradient-text-static">Clientes</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-base md:text-lg">Miles de hogares confían en VENGAS para sus reparaciones</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <div class="testimonial-card glass-card p-6 md:p-8 rounded-2xl scroll-reveal">
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">"Excelente servicio. El técnico llegó el mismo día y reparó mi calentador de forma rápida y profesional. Muy recomendado."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">MC</div>
+                        <div>
+                            <div class="font-semibold text-white text-sm">María Camila R.</div>
+                            <div class="text-xs text-gray-500">Poblado, Medellín</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-card p-6 md:p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">"Mi nevera dejó de enfriar y VENGAS la arregló en menos de 24 horas. El precio fue justo y me dieron garantía por escrito."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-sm">JA</div>
+                        <div>
+                            <div class="font-semibold text-white text-sm">Juan Andrés L.</div>
+                            <div class="text-xs text-gray-500">Laureles, Medellín</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-card p-6 md:p-8 rounded-2xl scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">"Instalaron mi punto cero de gas con total profesionalismo. Cumplen con todas las normas de seguridad. Muy satisfecha."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-sm">CP</div>
+                        <div>
+                            <div class="font-semibold text-white text-sm">Carolina P.</div>
+                            <div class="text-xs text-gray-500">Envigado</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 md:py-28 bg-brand-dark relative">
+        <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="inline-block bg-blue-500/10 border border-blue-500/20 text-blue-400 px-5 py-2 rounded-full text-xs font-semibold mb-4 uppercase tracking-wider">FAQ</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4">
+                    Preguntas <span class="gradient-text-static">Frecuentes</span>
+                </h2>
+            </div>
+
+            <div class="space-y-3">
+                <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-reveal">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                        <span class="font-semibold text-white text-sm md:text-base pr-4">¿Tienen cobertura en todo Medellín?</span>
+                        <i class="fas fa-chevron-down text-blue-400 text-xs faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6">
+                        <p class="text-gray-400 text-sm pb-5 md:pb-6 leading-relaxed">Sí, atendemos en todo el Valle de Aburrá: Medellín, Envigado, Sabaneta, Itagüí, La Estrella, Caldas, Bello, Copacabana, Girardota y Barbosa.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-reveal" style="transition-delay: 0.05s;">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                        <span class="font-semibold text-white text-sm md:text-base pr-4">¿Cuánto tiempo dura la garantía?</span>
+                        <i class="fas fa-chevron-down text-blue-400 text-xs faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6">
+                        <p class="text-gray-400 text-sm pb-5 md:pb-6 leading-relaxed">Ofrecemos una garantía certificada de hasta 4 meses por mano de obra y repuestos instalados. Entregamos un documento técnico oficial por cada servicio.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-reveal" style="transition-delay: 0.1s;">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                        <span class="font-semibold text-white text-sm md:text-base pr-4">¿Si realizo la reparación, debo pagar el valor de la visita?</span>
+                        <i class="fas fa-chevron-down text-blue-400 text-xs faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6">
+                        <p class="text-gray-400 text-sm pb-5 md:pb-6 leading-relaxed">No. Si decides realizar el servicio o reparación con nosotros una vez entregado el diagnóstico, el valor de la visita técnica se abona al costo total del trabajo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-reveal" style="transition-delay: 0.15s;">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                        <span class="font-semibold text-white text-sm md:text-base pr-4">¿Qué marcas reparan?</span>
+                        <i class="fas fa-chevron-down text-blue-400 text-xs faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6">
+                        <p class="text-gray-400 text-sm pb-5 md:pb-6 leading-relaxed">Somos expertos multimarca: Haceb, Bosch, Challenger, LG, Samsung, Whirlpool, Mabe, Electrolux, Abba y marcas importadas de alta gama.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-reveal" style="transition-delay: 0.2s;">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                        <span class="font-semibold text-white text-sm md:text-base pr-4">¿En qué horarios atienden?</span>
+                        <i class="fas fa-chevron-down text-blue-400 text-xs faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6">
+                        <p class="text-gray-400 text-sm pb-5 md:pb-6 leading-relaxed">Nuestro horario de atención es de Lunes a Sábado de 7:00 AM a 6:00 PM. También atendemos urgencias técnicas fuera de horario previa disponibilidad.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden scroll-reveal" style="transition-delay: 0.25s;">
+                    <button class="faq-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                        <span class="font-semibold text-white text-sm md:text-base pr-4">¿Qué medios de pago aceptan?</span>
+                        <i class="fas fa-chevron-down text-blue-400 text-xs faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6">
+                        <p class="text-gray-400 text-sm pb-5 md:pb-6 leading-relaxed">Aceptamos efectivo, transferencias Bancolombia, Nequi y Daviplata al finalizar el servicio para tu mayor comodidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contacto" class="py-20 md:py-28 bg-gradient-to-br from-blue-900/50 via-brand-dark to-orange-900/50 relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="hero-orb-1 top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="hero-orb-2 bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 relative z-10 text-center">
+            <div class="max-w-3xl mx-auto scroll-reveal">
+                <div class="w-24 h-24 mx-auto mb-8 relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-orange-500/20 rounded-full blur-2xl animate-pulse-slow"></div>
+                    <img src="logo.png" alt="VENGAS Medellín Logo" class="relative w-24 h-24 mx-auto rounded-full shadow-2xl logo-glow" onerror="this.src='https://image.qwenlm.ai/public_source/01afd6ca-f8a8-4e27-9b56-6db79b238c0b/16751779b-85c6-4242-b76b-c8f555e3a542.png'; this.onerror=null;">
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
+                    ¿Necesitas Servicio Técnico?
+                </h2>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+                    Agenda tu cita hoy y recibe atención exprés. Técnicos certificados listos para ayudarte.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Quiero%20agendar%20mi%20cita%20hoy%20para%20servicio%20técnico" class="btn-primary text-white px-10 py-4 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-3 shadow-2xl">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>Agendar por WhatsApp</span>
+                    </a>
+                    <a href="tel:+573238404024" class="btn-secondary text-white px-10 py-4 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-3">
+                        <i class="fas fa-phone"></i>
+                        <span>Llamar Ahora</span>
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Sin compromiso</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Respuesta inmediata</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Presupuesto gratis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-darker text-white pt-16 pb-8 border-t border-white/5">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-12">
+                <!-- Brand -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo.png" alt="VENGAS Medellín Footer Logo" class="w-12 h-12 rounded-full shadow-lg" onerror="this.src='https://image.qwenlm.ai/public_source/01afd6ca-f8a8-4e27-9b56-6db79b238c0b/16751779b-85c6-4242-b76b-c8f555e3a542.png'; this.onerror=null;">
+                        <div>
+                            <span class="text-xl font-black">VENGAS</span>
+                            <span class="text-xs text-blue-300 block -mt-1 font-semibold tracking-widest uppercase">Medellín</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Técnicos calificados para el diagnóstico, instalación y reparación de equipos del hogar y sistemas de gas en Medellín.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://wa.me/573238404024" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-green-400 hover:bg-green-500 hover:text-white transition-all duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-pink-400 hover:bg-pink-500 hover:text-white transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-red-400 hover:bg-red-500 hover:text-white transition-all duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Contact -->
+                <div>
+                    <h4 class="font-bold text-base mb-6 text-orange-400">Contacto Rápido</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-phone-alt mt-1 text-blue-400 text-xs"></i>
+                            <div>
+                                <p class="font-semibold text-white text-sm">+57 323 840 4024</p>
+                                <p class="text-xs">WhatsApp Directo</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-blue-400 text-xs"></i>
+                            <div>
+                                <p class="font-semibold text-white text-sm">Medellín y Alrededores</p>
+                                <p class="text-xs">Valle de Aburrá</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-clock mt-1 text-blue-400 text-xs"></i>
+                            <div>
+                                <p class="font-semibold text-white text-sm">Lun - Sáb: 7:00 AM - 6:00 PM</p>
+                                <p class="text-xs">Urgencias previa disponibilidad</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-base mb-6 text-orange-400">Servicios</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#servicios" class="hover:text-orange-400 transition flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-[8px]"></i> Calentadores de Paso</a></li>
+                        <li><a href="#servicios" class="hover:text-orange-400 transition flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-[8px]"></i> Lavadoras y Secadoras</a></li>
+                        <li><a href="#servicios" class="hover:text-orange-400 transition flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-[8px]"></i> Neveras y Nevecones</a></li>
+                        <li><a href="#servicios" class="hover:text-orange-400 transition flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-[8px]"></i> Instalaciones de Gas</a></li>
+                        <li><a href="#servicios" class="hover:text-orange-400 transition flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-[8px]"></i> Cubiertas de Vidrio</a></li>
+                        <li><a href="#servicios" class="hover:text-orange-400 transition flex items-center gap-2 text-sm"><i class="fas fa-chevron-right text-[8px]"></i> Servicio Técnico General</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-bold text-base mb-6 text-orange-400">Mantente Informado</h4>
+                    <p class="text-gray-500 text-sm mb-4">Recibe tips de mantenimiento y ofertas especiales.</p>
+                    <form class="flex flex-col gap-3" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+                        <input type="email" placeholder="Tu correo electrónico" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-orange-400 transition text-sm" required>
+                        <button type="submit" class="btn-primary text-white px-6 py-3 rounded-xl font-semibold text-sm">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Suscribirse
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-xs">© 2026 VENGAS SERVICIOS TÉCNICOS. Medellín, Colombia.</p>
+                <div class="flex gap-4 text-xs text-gray-700">
+                    <a href="#" class="hover:text-gray-400 transition">Política de Privacidad</a>
+                    <a href="#" class="hover:text-gray-400 transition">Términos de Servicio</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- BOTÓN DE ALTA CONVERSIÓN -->
-    <a href="https://wa.me/573238404024?text=Hola%20Vengas!%20Necesito%20programar%20una%20revisión%20técnica%20lo%20antes%20posible." class="btn-wa" target="_blank" rel="noopener noreferrer">
-        <div class="wa-content">
-            <span class="wa-badge-top">⭐ Calidad Certificada</span>
-            <span class="wa-main-text">PROGRAMAR VISITA AHORA</span>
-            <span class="wa-availability"><span class="pulse-dot"></span> Cupos disponibles hoy en Medellín</span>
-        </div>
-        <i class="fab fa-whatsapp wa-icon-glow"></i>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/573238404024?text=Hola%20VENGAS!%20Necesito%20soporte%20técnico%20inmediato" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all duration-300 hover:scale-110 group whatsapp-pulse">
+        <i class="fab fa-whatsapp text-2xl md:text-3xl relative z-10"></i>
+        <span class="absolute right-full mr-3 bg-white text-gray-900 px-4 py-2 rounded-xl shadow-xl text-sm font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto translate-x-2 group-hover:translate-x-0">
+            ¡Escríbenos ahora!
+        </span>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
-    <script src="script.js" defer></script>
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top-btn" class="fixed bottom-6 left-6 z-50 bg-blue-600 text-white w-11 h-11 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300 hover:scale-110 opacity-0 pointer-events-none">
+        <i class="fas fa-arrow-up text-sm"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        const emergencyBanner = document.querySelector('.emergency-banner');
+        
+        function updateNavbar() {
+            const currentScroll = window.pageYOffset;
+            const bannerHeight = emergencyBanner ? emergencyBanner.offsetHeight : 0;
+            
+            if (currentScroll > 50) {
+                navbar.classList.add('bg-brand-dark/90', 'backdrop-blur-xl', 'shadow-2xl', 'shadow-black/20');
+                navbar.classList.remove('bg-transparent');
+                navbar.style.top = '0';
+            } else {
+                navbar.classList.remove('bg-brand-dark/90', 'backdrop-blur-xl', 'shadow-2xl', 'shadow-black/20');
+                navbar.classList.add('bg-transparent');
+                navbar.style.top = bannerHeight + 'px';
+            }
+        }
+        
+        window.addEventListener('scroll', updateNavbar);
+        window.addEventListener('load', updateNavbar);
+
+        // FAQ Accordion
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const faqItem = btn.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                
+                // Close others
+                faqBtns.forEach(otherBtn => {
+                    const otherItem = otherBtn.parentElement;
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    if (otherItem !== faqItem) {
+                        otherItem.classList.remove('active');
+                        otherAnswer.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current
+                faqItem.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+
+        // Scroll Reveal Animation
+        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+        
+        const revealOnScroll = () => {
+            scrollRevealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) {
+                    el.classList.add('revealed');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter-number');
+        let countersAnimated = false;
+
+        const animateCounters = () => {
+            if (countersAnimated) return;
+            
+            counters.forEach(counter => {
+                const rect = counter.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    countersAnimated = true;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    if (!target) return;
+                    
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        current += step;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target + '+';
+                        }
+                    };
+                    
+                    updateCounter();
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateCounters);
+        window.addEventListener('load', animateCounters);
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scroll-top-btn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 500) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Active Navigation Highlight
+        const sections = document.querySelectorAll('section[id]');
+        
+        const highlightNav = () => {
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 150;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                
+                if (navLink) {
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLink.classList.add('active');
+                    } else {
+                        navLink.classList.remove('active');
+                    }
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', highlightNav);
+
+        // Initial setup for navbar position
+        window.addEventListener('load', () => {
+            const bannerHeight = emergencyBanner ? emergencyBanner.offsetHeight : 0;
+            navbar.style.top = bannerHeight + 'px';
+        });
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            const bannerHeight = emergencyBanner ? emergencyBanner.offsetHeight : 0;
+            if (window.pageYOffset <= 50) {
+                navbar.style.top = bannerHeight + 'px';
+            }
+        });
+    </script>
 </body>
 </html>
+
